@@ -1,0 +1,13 @@
+{
+  "title": "Documentation",
+  "pages": [
+    "index",
+    "---Getting Started---",
+    "s0-gateway",
+    "s1-gateway",
+    "base-board",
+    "beaglev-fire-hat",
+    "---Resources---",
+    "use-cases"
+  ]
+}

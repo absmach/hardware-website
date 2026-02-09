@@ -1,0 +1,119 @@
+---
+title: S0 IoT Gateway
+description: Swiss knife for wireless IoT - Modular multi-protocol IoT gateway
+---
+
+# S0 IoT Gateway
+
+The **S0 IoT Gateway** is a robust and modular IoT gateway designed for smart metering, industrial IoT, and edge computing applications. Built around the ESP32-C6 microcontroller with RISC-V core, S0 delivers multi-protocol connectivity with professional-grade reliability.
+
+## Overview
+
+S0 is capable of collecting data from multiple wireless protocols and transmitting it securely to the cloud via various connectivity options. It integrates with [Magistrala](https://github.com/absmach/magistrala), a modern, scalable, secure, open-source IoT platform.
+
+### Key Problem Statement
+
+IoT deployments face several critical challenges:
+
+- Fragmented infrastructure requiring multiple gateways for different protocols
+- High power consumption unsuitable for battery-powered installations
+- Closed proprietary platforms limiting flexibility
+- Lack of secure, flexible edge compute capabilities
+- Complex cloud integration increasing operational costs
+
+S0 addresses these challenges with a unified, open-source platform.
+
+## Hardware Specifications
+
+### Core Components
+
+- **Microcontroller**: ESP32-C6 with RISC-V core
+- **Wireless M-Bus**: RC-S2LP module (868 MHz)
+- **Cellular**: SIM7080G module (NB-IoT / LTE-M)
+- **WiFi & BLE**: Integrated in ESP32-C6
+- **Operating System**: Zephyr RTOS
+
+### Connectivity Options
+
+- **Receive Data**: WiFi, BLE, M-Bus, wM-Bus, I2C, SPI, UART
+- **Transmit Data**: NB-IoT, LTE-M, WiFi, Ethernet (via Base Board), 4G/5G
+
+### Power Management
+
+- Multiple power input options
+- Battery backup support
+- Ultra-low power operation for remote deployments
+- Optimized for LPWAN and cellular IoT use cases
+
+## Software Stack
+
+### Zephyr RTOS
+
+S0 runs on Zephyr RTOS, providing:
+
+- Secure and modular firmware stack
+- Built-in protocol support (MQTT, CoAP, WebSockets, HTTP)
+- Open-source foundation for transparency and maintainability
+- Community-driven innovation
+
+### Magistrala Integration
+
+Native integration with Magistrala IoT platform:
+
+- Seamless data ingestion and device management
+- Secure cloud connectivity
+- Open-source and patent-free
+- Scalable architecture
+
+## Expansion Options
+
+### Base Board
+
+The S0 Base Board adds:
+
+- W5500 Ethernet controller
+- TSS721A M-Bus transceiver
+- SD card slot for data logging
+- 24V DC power input
+- Battery backup with charging circuit
+- DIN-rail mounting
+
+[Learn more about Base Board](/docs/base-board)
+
+## Use Cases
+
+### Smart Metering
+
+Deploy S0 for residential and industrial utility monitoring:
+
+- Read wireless and wired M-Bus meters
+- Backhaul via NB-IoT or LTE-M
+- DIN-rail mount in electrical cabinets
+- Battery backup for power outages
+
+### Industrial Predictive Maintenance
+
+Monitor industrial machinery for anomaly detection:
+
+- Collect high-frequency sensor data
+- Real-time edge processing with Wasm
+- Local anomaly detection
+- Reduced network usage
+
+### Edge AI Inference
+
+Run AI inference at the edge:
+
+- TinyML workloads via Wasm
+- Privacy-preserving processing
+- Low-latency decisions
+- Independent of cloud connectivity
+
+### Agricultural IoT
+
+Monitor remote farms and fields:
+
+- Soil moisture and weather monitoring
+- GNSS geo-tagging
+- Offline SD card logging
+- NB-IoT backhaul

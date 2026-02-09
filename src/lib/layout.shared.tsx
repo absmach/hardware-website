@@ -1,0 +1,68 @@
+import type { BaseLayoutProps, LinkItemType } from "fumadocs-ui/layouts/shared";
+import { AlbumIcon, LayoutTemplate } from "lucide-react";
+import { assetPath } from "./base-path";
+
+export const linkItems: LinkItemType[] = [
+  {
+    text: "Features",
+    url: "/#features",
+    active: "url",
+  },
+  {
+    text: "How It Works",
+    url: "/#how-it-works",
+    active: "url",
+  },
+  {
+    text: "FAQ",
+    url: "/#faq",
+    active: "url",
+  },
+  {
+    icon: <AlbumIcon />,
+    text: "Docs",
+    url: "/docs",
+    active: "nested-url",
+  },
+  {
+    text: "Blogs",
+    url: "/blogs",
+    icon: <LayoutTemplate />,
+    active: "url",
+  },
+];
+
+export const logo = (
+  <>
+    <div className="flex items-center space-x-2">
+      <img
+        src={assetPath("/logo-black.svg")}
+        className="h-10 w-auto dark:hidden"
+        alt="Abstract Machines logo"
+      />
+      <img
+        src={assetPath("/logo-white.svg")}
+        className="h-10 w-auto hidden dark:block"
+        alt="Abstract Machines logo"
+      />
+      Hardware
+    </div>
+  </>
+);
+
+export function baseOptions(): BaseLayoutProps {
+  return {
+    themeSwitch: {
+      enabled: true,
+    },
+    searchToggle: {
+      enabled: true,
+    },
+    githubUrl: "https://github.com/absmach/s0",
+    nav: {
+      title: <>{logo}</>,
+      transparentMode: "top",
+    },
+    links: linkItems,
+  };
+}

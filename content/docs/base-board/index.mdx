@@ -1,0 +1,211 @@
+---
+title: S0 Base Board
+description: Modular expansion board for S0 IoT Gateway
+---
+
+# S0 Base Board
+
+The **S0 Base Board** is a modular expansion board designed to power and extend the functionality of the S0 compute module. It integrates critical components for industrial IoT and smart metering applications, making it ideal for professional deployments.
+
+## Overview
+
+The Base Board transforms the S0 module into a complete gateway solution by adding:
+
+- Wired Ethernet connectivity
+- M-Bus transceiver for utility metering
+- SD card for local data logging
+- Robust power management with backup
+- Industrial-grade mounting options
+
+## Hardware Specifications
+
+### Core Components
+
+#### W5500 Ethernet Controller
+
+- SPI-based Ethernet connectivity
+- Reliable wired network for industrial environments
+- Suitable for installations without wireless coverage
+- Low-power operation
+
+#### TSS721A M-Bus Transceiver
+
+- UART-based interface for M-Bus communication
+- Smart metering and utility integration
+- Compatible with standard M-Bus devices
+- Screw terminal wiring
+
+#### SD Card Slot
+
+- Local data logging for offline applications
+- Edge data buffering
+- Historical data storage
+- FAT filesystem support
+
+### Power Management
+
+#### Power Input
+
+- 24V DC input via screw terminal
+- Wide input voltage range
+- Overcurrent protection
+- Reverse polarity protection
+
+#### Battery Backup
+
+- JST connector for battery
+- Onboard charging circuit
+- Automatic switchover
+- Power outage resilience
+
+### Physical Specifications
+
+- Standard pin headers for S0 module
+- DIN-rail mountable
+- Compact form factor
+- Industrial-grade PCB
+
+## Enhanced Capabilities
+
+When S0 is connected to the Base Board, the gateway gains:
+
+### Wired Connectivity
+
+- **Ethernet**: Reliable SPI-based networking via W5500
+- **M-Bus**: Direct connection to wired utility meters
+- **Redundancy**: Multiple backhaul options (WiFi, Ethernet, Cellular)
+
+### Data Persistence
+
+- **SD Card Logging**: Store sensor readings locally
+- **Offline Operation**: Continue logging without cloud connectivity
+- **Data Buffering**: Upload when connection is restored
+- **Historical Data**: Access past measurements
+
+### Industrial Features
+
+- **24V Power**: Standard industrial voltage
+- **Battery Backup**: Uninterrupted operation during power outages
+- **DIN-Rail Mount**: Easy installation in control cabinets
+- **Robust Connectors**: Screw terminals for field wiring
+
+## Use Cases
+
+### Smart Metering Installations
+
+Perfect for utility monitoring deployments:
+
+- Mount in apartment block electrical cabinets
+- Read legacy wired M-Bus meters
+- Collect wireless M-Bus data simultaneously
+- Log readings to SD card for redundancy
+- Backhaul via Ethernet or cellular
+
+### Industrial IoT Gateway
+
+Ideal for factory and industrial environments:
+
+- DIN-rail mount in control panels
+- Wired Ethernet for reliability
+- Battery backup for critical monitoring
+- Local logging for compliance
+
+### Remote Monitoring Stations
+
+Suitable for off-grid installations:
+
+- 24V power from solar systems
+- Battery backup for night operation
+- SD card for offline data collection
+- Multiple connectivity options
+
+### Building Automation
+
+Deploy in commercial buildings:
+
+- M-Bus for HVAC and utility meters
+- Ethernet backbone connectivity
+- Local data aggregation
+- Centralized cloud reporting
+
+## Technical Integration
+
+### S0 Connection
+
+The Base Board provides:
+
+- Standard pin headers matching S0 pinout
+- Power delivery to S0 module
+- SPI bus for Ethernet (W5500)
+- UART for M-Bus transceiver (TSS721A)
+- SPI for SD card
+- GPIO for control signals
+
+### Communication Interfaces
+
+#### Ethernet (W5500)
+
+- SPI interface to S0
+- 10/100 Mbps
+- Auto-negotiation
+- Hardware TCP/IP stack
+
+#### M-Bus (TSS721A)
+
+- UART interface to S0
+- Master and slave modes
+- Standard M-Bus timing
+- Isolated communication
+
+#### SD Card
+
+- SPI interface
+- SDHC support
+- FAT32 filesystem
+- Hot-swappable
+
+## Power Architecture
+
+### Input Stage
+
+- 24V DC nominal input
+- 18V - 36V operating range
+- Screw terminal connection
+- Fuse protection
+
+### Battery Stage
+
+- JST connector for Li-Ion/LiPo
+- Automatic charging
+- Charge management IC
+- Voltage monitoring
+
+### Output Stage
+
+- Regulated 3.3V for S0
+- Regulated 5V for peripherals
+- Power sequencing
+- Brownout protection
+
+## Mechanical Specifications
+
+### Dimensions
+
+- PCB Size: TBD
+- Height with S0: TBD
+- DIN-rail compatible: 35mm standard
+
+### Connectors
+
+- S0 Module: Pin headers
+- Power Input: 2-pin screw terminal
+- M-Bus: 2-pin screw terminal
+- Battery: JST connector
+- Ethernet: RJ45 jack
+- SD Card: Push-push socket
+
+### Mounting
+
+- DIN-rail clip
+- Screw mounting holes
+- Enclosure compatible
