@@ -29,10 +29,10 @@ export const metadata: Metadata = {
     siteName: "Abstract Machines Hardware",
     images: [
       {
-        url: `${baseUrl}/opengraph-image.jpg`,
-        secureUrl: `${baseUrl}/opengraph-image.jpg`,
+        url: `${baseUrl}/opengraph-image.png`,
+        secureUrl: `${baseUrl}/opengraph-image.png`,
         alt: "Abstract Machines Hardware",
-        type: "image/jpeg",
+        type: "image/png",
         width: 1200,
         height: 630,
       },
@@ -45,10 +45,10 @@ export const metadata: Metadata = {
       "Open-source IoT gateway hardware for edge computing. S0 module and Base Board for smart metering, industrial IoT, and edge AI applications.",
     images: [
       {
-        url: `${baseUrl}/opengraph-image.jpg`,
-        secureUrl: `${baseUrl}/opengraph-image.jpg`,
+        url: `${baseUrl}/opengraph-image.png`,
+        secureUrl: `${baseUrl}/opengraph-image.png`,
         alt: "Abstract Machines Hardware",
-        type: "image/jpeg",
+        type: "image/png",
         width: 1200,
         height: 630,
       },
