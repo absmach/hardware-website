@@ -62,7 +62,7 @@ export default function ProductsSection() {
           </p>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-2">
+        <div className="mt-12 sm:mt-16 grid grid-cols-1 gap-6 sm:gap-8 lg:grid-cols-2">
           {products.map((product) => {
             const Icon = product.icon;
             return (
@@ -72,29 +72,34 @@ export default function ProductsSection() {
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
 
-                <CardHeader className="relative">
+                <CardHeader className="relative px-4 sm:px-6">
                   <ProductIconDecorator>
-                    <Icon className="size-8" aria-hidden />
+                    <Icon className="size-6 sm:size-8" aria-hidden />
                   </ProductIconDecorator>
 
-                  <CardTitle className="mt-6 text-2xl">
+                  <CardTitle className="mt-4 sm:mt-6 text-xl sm:text-2xl">
                     {product.name}
                   </CardTitle>
-                  <CardDescription className="text-base italic text-muted-foreground">
+                  <CardDescription className="text-sm sm:text-base italic text-muted-foreground">
                     {product.tagline}
                   </CardDescription>
                 </CardHeader>
 
-                <CardContent className="relative flex-1 space-y-6">
-                  <p className="text-muted-foreground">{product.description}</p>
+                <CardContent className="relative flex-1 space-y-4 sm:space-y-6 px-4 sm:px-6">
+                  <p className="text-muted-foreground text-sm sm:text-base">
+                    {product.description}
+                  </p>
 
-                  <div className="space-y-3">
+                  <div className="space-y-2 sm:space-y-3">
                     <p className="text-sm font-semibold">Key Features:</p>
                     <ul className="space-y-2">
                       {product.features.map((feature) => (
-                        <li key={feature} className="flex items-start gap-3">
-                          <div className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-primary/10">
-                            <Check className="size-3 text-primary" />
+                        <li
+                          key={feature}
+                          className="flex items-start gap-2 sm:gap-3"
+                        >
+                          <div className="mt-0.5 flex size-4 sm:size-5 shrink-0 items-center justify-center rounded-full bg-primary/10">
+                            <Check className="size-2.5 sm:size-3 text-primary" />
                           </div>
                           <span className="text-sm text-muted-foreground">
                             {feature}
@@ -105,8 +110,8 @@ export default function ProductsSection() {
                   </div>
                 </CardContent>
 
-                <CardFooter className="relative flex gap-3 pt-6">
-                  <Link href={product.docsLink} className="flex-1">
+                <CardFooter className="relative flex flex-col sm:flex-row gap-3 pt-4 sm:pt-6 px-4 sm:px-6">
+                  <Link href={product.docsLink} className="w-full sm:flex-1">
                     <Button
                       size="lg"
                       variant="outline"
@@ -115,7 +120,10 @@ export default function ProductsSection() {
                       Documentation <MoveRight className="w-4 h-4" />
                     </Button>
                   </Link>
-                  <Link href={product.learnMoreLink} className="flex-1">
+                  <Link
+                    href={product.learnMoreLink}
+                    className="w-full sm:flex-1"
+                  >
                     <Button size="lg" className="w-full gap-2">
                       Get Started <MoveRight className="w-4 h-4" />
                     </Button>

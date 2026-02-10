@@ -43,30 +43,30 @@ const faqs = [
 ];
 
 export const FAQSection = () => (
-  <div id="faq" className="w-full py-20 lg:py-40">
+  <div id="faq" className="w-full py-16 px-4 sm:py-20 lg:py-40 sm:px-6">
     <div className="container mx-auto">
       <div className="flex flex-col gap-10">
         <div className="flex text-center justify-center items-center gap-4 flex-col">
           <Badge variant="outline">FAQ</Badge>
           <div className="flex gap-2 flex-col">
-            <h4 className="text-3xl md:text-5xl tracking-tighter max-w-xl text-center font-regular">
+            <h4 className="text-2xl sm:text-3xl md:text-5xl tracking-tighter max-w-xl text-center font-regular">
               Frequently Asked Questions
             </h4>
-            <p className="text-lg leading-relaxed tracking-tight text-muted-foreground max-w-xl text-center">
+            <p className="text-base sm:text-lg leading-relaxed tracking-tight text-muted-foreground max-w-xl text-center">
               Everything you need to know about our modular IoT gateway
               solutions, hardware specifications, and integration capabilities.
             </p>
           </div>
           <div>
             <Link href="mailto:info@absmach.eu">
-              <Button className="gap-4" variant="outline">
+              <Button className="gap-2 sm:gap-4" variant="outline">
                 Any questions? Reach out <PhoneCall className="w-4 h-4" />
               </Button>
             </Link>
           </div>
         </div>
 
-        <div className="max-w-4xl w-full mx-auto">
+        <div className="max-w-4xl w-full mx-auto px-0 sm:px-4">
           <Accordion type="single" collapsible className="w-full">
             {faqs.map((faq, index) => (
               <AccordionItem
@@ -74,10 +74,10 @@ export const FAQSection = () => (
                 value={`item-${index + 1}`}
                 className="border-b-2"
               >
-                <AccordionTrigger className="text-lg md:text-xl py-6 hover:no-underline">
+                <AccordionTrigger className="text-base sm:text-lg md:text-xl py-4 sm:py-6 hover:no-underline text-left">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-base md:text-lg leading-relaxed">
+                <AccordionContent className="text-sm sm:text-base md:text-lg leading-relaxed">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>

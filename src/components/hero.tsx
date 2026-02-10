@@ -44,7 +44,7 @@ export const HeroSection = () => {
                 preset="fade-in-blur"
                 speedSegment={0.3}
                 as="h1"
-                className="mt-8 max-w-2xl text-balance text-5xl font-medium md:text-6xl lg:mt-16"
+                className="mt-8 max-w-2xl text-balance text-3xl font-medium sm:text-5xl md:text-6xl lg:mt-16"
               >
                 Swiss Knife for Wireless IoT
               </TextEffect>
@@ -54,7 +54,7 @@ export const HeroSection = () => {
                 speedSegment={0.3}
                 delay={0.5}
                 as="p"
-                className="mt-8 max-w-2xl text-pretty text-lg"
+                className="mt-6 max-w-2xl text-pretty text-base sm:text-lg md:mt-8"
               >
                 Modular IoT gateway solutions for smart metering, industrial
                 IoT, and edge computing. S0 module and Base Board deliver
@@ -117,7 +117,7 @@ export const HeroSection = () => {
               ...transitionVariants,
             }}
           >
-            <div className="mask-b-from-55% relative -mr-56 mt-8 overflow-hidden px-2 sm:mr-0 sm:mt-12 md:mt-20">
+            <div className="mask-b-from-55% relative mt-8 overflow-hidden px-2 sm:mt-12 md:mt-20 xl:-mr-56">
               <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-5xl overflow-hidden rounded-2xl border p-4 shadow-lg shadow-zinc-950/15 ring-1">
                 <video
                   className="aspect-15/8 relative rounded-2xl w-full"

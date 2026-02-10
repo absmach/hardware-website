@@ -41,36 +41,26 @@ export default function S1FeaturesSection() {
             Powerful Linux-based platform for industrial IoT deployments.
           </p>
         </div>
-        <Card className="@min-4xl:max-w-full mx-auto mt-8 overflow-hidden shadow-zinc-950/5 *:text-center md:mt-16">
-          {[
-            { row: features.slice(0, 2), key: "top" },
-            { row: features.slice(2), key: "bottom" },
-          ].map(({ row, key }) => (
-            <div
-              key={key}
-              className={`grid max-w-sm @min-4xl:max-w-full @min-4xl:grid-cols-2 divide-y @min-4xl:divide-x @min-4xl:divide-y-0 mx-auto ${key === "bottom" ? "border-t mx-6 pt-6" : "pb-6"}`}
-            >
-              {row.map((feature) => {
-                const Icon = feature.icon;
-                return (
-                  <div key={feature.title} className="group shadow-zinc-950/5">
-                    <CardHeader className="pb-3">
-                      <CardDecorator>
-                        <Icon className="size-6" aria-hidden />
-                      </CardDecorator>
+        <div className="mx-auto mt-8 grid max-w-sm grid-cols-1 gap-6 sm:max-w-full sm:grid-cols-2 md:mt-16">
+          {features.map((feature) => {
+            const Icon = feature.icon;
+            return (
+              <Card key={feature.title} className="group shadow-zinc-950/5">
+                <CardHeader className="pb-3">
+                  <CardDecorator>
+                    <Icon className="size-6" aria-hidden />
+                  </CardDecorator>
 
-                      <h3 className="mt-6 font-medium">{feature.title}</h3>
-                    </CardHeader>
+                  <h3 className="mt-6 font-medium">{feature.title}</h3>
+                </CardHeader>
 
-                    <CardContent>
-                      <p className="text-sm">{feature.description}</p>
-                    </CardContent>
-                  </div>
-                );
-              })}
-            </div>
-          ))}
-        </Card>
+                <CardContent>
+                  <p className="text-sm">{feature.description}</p>
+                </CardContent>
+              </Card>
+            );
+          })}
+        </div>
       </div>
     </section>
   );

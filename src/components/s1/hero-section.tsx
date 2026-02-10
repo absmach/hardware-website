@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, Rocket } from "lucide-react";
+import { ArrowRight, Menu, Rocket, X } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 import { Button } from "@/components/ui/button";
@@ -12,50 +12,71 @@ const menuItems = [
 ];
 
 export default function S1HeroSection() {
-  const [menuState] = React.useState(false);
+  const [menuOpen, setMenuOpen] = React.useState(false);
 
   return (
     <>
       <header>
-        <nav
-          data-state={menuState && "active"}
-          className="fixed z-20 w-full border-b border-dashed bg-white backdrop-blur md:relative dark:bg-zinc-950/50 lg:dark:bg-transparent"
-        >
-          <div className="m-auto max-w-5xl px-6">
-            <div className="flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
-              <div className="flex w-full justify-between lg:w-auto">
-                <Link
-                  href="/"
-                  aria-label="home"
-                  className="flex items-center space-x-2"
-                >
-                  <span className="text-xl font-bold">S0 Gateway</span>
-                </Link>
+        <nav className="fixed z-20 w-full border-b border-dashed bg-white/80 backdrop-blur-md md:relative dark:bg-zinc-950/50 lg:dark:bg-transparent">
+          <div className="m-auto max-w-5xl px-4 sm:px-6">
+            <div className="flex items-center justify-between py-3 lg:py-4">
+              <Link
+                href="/"
+                aria-label="home"
+                className="flex items-center space-x-2"
+              >
+                <span className="text-lg font-bold sm:text-xl">S0 Gateway</span>
+              </Link>
+
+              <div className="hidden lg:flex lg:items-center lg:gap-8">
+                {menuItems.map((item) => (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className="text-muted-foreground hover:text-accent-foreground text-sm transition-colors"
+                  >
+                    {item.name}
+                  </Link>
+                ))}
               </div>
 
-              <div className="bg-background in-data-[state=active]:block lg:in-data-[state=active]:flex mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 rounded-3xl border p-6 shadow-2xl shadow-zinc-300/20 md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none dark:shadow-none dark:lg:bg-transparent">
-                <div className="lg:pr-4">
-                  <ul className="space-y-6 text-base lg:flex lg:gap-8 lg:space-y-0 lg:text-sm">
-                    {menuItems.map((item) => (
-                      <li key={item.name}>
-                        <Link
-                          href={item.href}
-                          className="text-muted-foreground hover:text-accent-foreground block duration-150"
-                        >
-                          <span>{item.name}</span>
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
+              <button
+                onClick={() => setMenuOpen(!menuOpen)}
+                className="lg:hidden p-2"
+                aria-label="Toggle menu"
+                type="submit"
+              >
+                {menuOpen ? (
+                  <X className="size-5" />
+                ) : (
+                  <Menu className="size-5" />
+                )}
+              </button>
             </div>
+
+            {menuOpen && (
+              <div className="lg:hidden border-t py-4">
+                <ul className="space-y-4">
+                  {menuItems.map((item) => (
+                    <li key={item.name}>
+                      <Link
+                        href={item.href}
+                        onClick={() => setMenuOpen(false)}
+                        className="text-muted-foreground hover:text-accent-foreground block py-2 transition-colors"
+                      >
+                        {item.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
         </nav>
       </header>
-      <main className="overflow-hidden">
+      <main className="overflow-hidden pt-14 md:pt-0">
         <section className="relative border-b container mx-auto">
-          <div className="relative py-24 lg:py-28">
+          <div className="relative py-16 sm:py-24 lg:py-28">
             <div className="mx-auto max-w-7xl px-6 md:px-12">
               <div className="text-center sm:mx-auto sm:w-10/12 lg:mr-auto lg:mt-0 lg:w-4/5">
                 <Link
@@ -71,10 +92,11 @@ export default function S1HeroSection() {
                   <ArrowRight className="size-4" />
                 </Link>
 
-                <h1 className="mt-8 text-4xl font-semibold md:text-5xl xl:text-5xl xl:[line-height:1.125]">
-                  S1 – Linux Gateway <br /> for Industrial IoT
+                <h1 className="mt-8 text-2xl font-semibold sm:text-4xl md:text-5xl xl:[line-height:1.125]">
+                  S1 – Linux Gateway <br className="hidden sm:block" /> for
+                  Industrial IoT
                 </h1>
-                <p className="mx-auto mt-8 hidden max-w-2xl text-wrap text-lg sm:block">
+                <p className="mx-auto mt-6 max-w-2xl text-wrap text-base sm:text-lg sm:mt-8">
                   S1 is a powerful Linux-based IoT gateway built on RISC-V
                   architecture. It offers robust connectivity, advanced
                   processing capabilities, and scalability for industrial IoT

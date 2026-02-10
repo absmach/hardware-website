@@ -61,7 +61,7 @@ export default function FeatureSection() {
             smart metering, industrial automation, and edge computing.
           </p>
         </div>
-        <div className="@min-4xl:max-w-full @min-4xl:grid-cols-3 mx-auto mt-8 grid max-w-sm gap-6 *:text-center md:mt-16 lg:grid-cols-2 xl:grid-cols-3">
+        <div className="mx-auto mt-8 grid max-w-sm grid-cols-1 gap-6 *:text-center sm:max-w-full sm:grid-cols-2 md:mt-16 lg:grid-cols-3">
           {features.map((feature) => {
             const Icon = feature.icon;
             return (

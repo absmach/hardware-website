@@ -29,10 +29,10 @@ const Logo = () => {
 
 export default function FooterSection() {
   return (
-    <footer className="py-12">
+    <footer className="py-8 sm:py-12">
       <div className="container mx-auto space-y-6 px-4">
-        <div className="grid gap-8 md:grid-cols-4">
-          <div className="space-y-4">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="space-y-4 sm:col-span-2 lg:col-span-1">
             <Logo />
             <p className="text-muted-foreground text-sm">
               Open-source IoT gateway hardware for smart metering, industrial
@@ -70,7 +70,7 @@ export default function FooterSection() {
             </div>
           </div>
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold">Resources</h3>
+            <h3 className="text-base sm:text-lg font-semibold">Resources</h3>
             <ul className="[&_li_a]:text-muted-foreground [&_li_a]:hover:text-foreground space-y-2 [&_li_a]:block [&_li_a]:text-sm [&_li_a]:transition-colors [&_li_a]:hover:underline">
               <li>
                 <Link href="/docs">Documentation</Link>
@@ -83,7 +83,7 @@ export default function FooterSection() {
             </ul>
           </div>
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold">Company</h3>
+            <h3 className="text-base sm:text-lg font-semibold">Company</h3>
             <ul className="[&_li_a]:text-muted-foreground [&_li_a]:hover:text-foreground space-y-2 [&_li_a]:block [&_li_a]:text-sm [&_li_a]:transition-colors [&_li_a]:hover:underline">
               <li>
                 <Link href="https://absmach.eu" target="_blank">
@@ -107,7 +107,7 @@ export default function FooterSection() {
             </ul>
           </div>
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold">Newsletter</h3>
+            <h3 className="text-base sm:text-lg font-semibold">Newsletter</h3>
             <p className="text-muted-foreground text-sm">
               Stay updated with the latest news and updates from Abstract
               Machines Hardware.
@@ -117,8 +117,8 @@ export default function FooterSection() {
                 <InputGroupInput type="email" placeholder="Your email" />
                 <InputGroupAddon align="inline-end">
                   <InputGroupButton variant="secondary">
-                    <span className="hidden lg:inline">Subscribe</span>
-                    <SendIcon className="inline lg:hidden" />
+                    <span className="hidden sm:inline">Subscribe</span>
+                    <SendIcon className="inline sm:hidden" />
                   </InputGroupButton>
                 </InputGroupAddon>
               </InputGroup>
