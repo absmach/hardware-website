@@ -76,26 +76,23 @@ export const HeroSection = () => {
                 }}
                 className="mt-12 flex items-center gap-2"
               >
-                <div
+                <Button
                   key={1}
-                  className="bg-foreground/10 rounded-[calc(var(--radius-xl)+0.125rem)] border p-0.5"
+                  asChild
+                  size="lg"
+                  variant="outline"
+                  className="rounded-xl px-5 text-base"
                 >
-                  <Button
-                    asChild
-                    size="lg"
-                    className="rounded-xl px-5 text-base"
-                  >
-                    <Link href="/s0">
-                      <span className="text-nowrap">S0 Gateway</span>
-                    </Link>
-                  </Button>
-                </div>
+                  <Link href="/s0">
+                    <span className="text-nowrap">S0 Gateway</span>
+                  </Link>
+                </Button>
                 <Button
                   key={2}
                   asChild
                   size="lg"
-                  variant="ghost"
-                  className="h-10.5 rounded-xl px-5 text-base"
+                  variant="outline"
+                  className="rounded-xl px-5 text-base"
                 >
                   <Link href="/s1">
                     <span className="text-nowrap">S1 Gateway</span>
