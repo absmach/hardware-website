@@ -50,10 +50,7 @@ const features = [
 
 export default function S0FeaturesSection() {
   return (
-    <section
-      id="features"
-      className=" py-16 md:py-32 dark:bg-transparent border-b"
-    >
+    <section id="features" className="py-16 md:py-32 border-b">
       <div className="@container mx-auto max-w-5xl px-6">
         <div className="text-center">
           <h2 className="text-balance text-4xl font-semibold lg:text-5xl">
@@ -71,7 +68,7 @@ export default function S0FeaturesSection() {
           ].map(({ row, key }) => (
             <div
               key={key}
-              className={`grid max-w-sm @min-4xl:max-w-full @min-4xl:grid-cols-3 divide-y @min-4xl:divide-x @min-4xl:divide-y-0 mx-auto${key === "bottom" ? " border-t pt-6" : "pb-6"}`}
+              className={`grid max-w-sm @min-4xl:max-w-full @min-4xl:grid-cols-3 divide-y @min-4xl:divide-x @min-4xl:divide-y-0 mx-auto ${key === "bottom" ? "border-t pt-6" : "pb-6"}`}
             >
               {row.map((feature) => {
                 const Icon = feature.icon;

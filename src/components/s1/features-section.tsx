@@ -48,7 +48,7 @@ export default function S1FeaturesSection() {
           ].map(({ row, key }) => (
             <div
               key={key}
-              className={`grid max-w-sm @min-4xl:max-w-full @min-4xl:grid-cols-2 divide-y @min-4xl:divide-x @min-4xl:divide-y-0 mx-auto${key === "bottom" ? " border-t mx-6 pt-6" : " pb-6"}`}
+              className={`grid max-w-sm @min-4xl:max-w-full @min-4xl:grid-cols-2 divide-y @min-4xl:divide-x @min-4xl:divide-y-0 mx-auto ${key === "bottom" ? "border-t mx-6 pt-6" : "pb-6"}`}
             >
               {row.map((feature) => {
                 const Icon = feature.icon;

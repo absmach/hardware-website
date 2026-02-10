@@ -9,14 +9,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
 
 const cache = new Map<string, string>();
 
-export function LLMCopyButton({
-  /**
-   * A URL to fetch the raw Markdown/MDX content of page
-   */
-  markdownUrl,
-}: {
-  markdownUrl: string;
-}) {
+export function LLMCopyButton({ markdownUrl }: { markdownUrl: string }) {
   const [isLoading, setLoading] = useState(false);
   const [checked, onClick] = useCopyButton(async () => {
     const cached = cache.get(markdownUrl);
@@ -67,14 +60,7 @@ export function ViewOptions({
   markdownUrl,
   githubUrl,
 }: {
-  /**
-   * A URL to the raw Markdown/MDX content of page
-   */
   markdownUrl: string;
-
-  /**
-   * Source file URL on GitHub
-   */
   githubUrl: string;
 }) {
   const items = useMemo(() => {

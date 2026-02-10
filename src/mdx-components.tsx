@@ -11,8 +11,9 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
         <Pre>{props.children}</Pre>
       </CodeBlock>
     ),
-    // biome-ignore lint/suspicious/noExplicitAny: This is okay
-    img: (props) => <ImageZoom {...(props as any)} />,
+    img: (props: React.ComponentProps<typeof ImageZoom>) => (
+      <ImageZoom {...props} />
+    ),
     ...components,
   };
 }

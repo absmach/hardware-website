@@ -76,7 +76,7 @@ export function TextEffect({
     >
       {segments.map((segment, index) => (
         <motion.span
-          // biome-ignore lint/suspicious/noArrayIndexKey: This is okay
+          // biome-ignore lint/suspicious/noArrayIndexKey: segments can repeat
           key={`${segment}-${index}`}
           variants={variants}
           transition={{ duration: 0.5 }}
