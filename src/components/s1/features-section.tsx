@@ -2,12 +2,36 @@ import { Cloud, Cpu, Network, Server } from "lucide-react";
 import type { ReactNode } from "react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 
+const features = [
+  {
+    icon: Server,
+    title: "Linux-Based Platform",
+    description:
+      "Runs on a Linux-based platform for scalability and reliability in industrial IoT applications.",
+  },
+  {
+    icon: Network,
+    title: "Robust Connectivity",
+    description:
+      "Provides reliable connectivity for industrial environments, ensuring seamless communication across devices.",
+  },
+  {
+    icon: Cpu,
+    title: "RISC-V Architecture",
+    description:
+      "Built on RISC-V architecture for high-performance computing and scalability in demanding applications.",
+  },
+  {
+    icon: Cloud,
+    title: "Edge-to-Cloud Integration",
+    description:
+      "Seamlessly integrates edge devices with cloud systems for efficient data processing and management.",
+  },
+];
+
 export default function S1FeaturesSection() {
   return (
-    <section
-      id="features"
-      className="bg-zinc-50 py-16 md:py-32 dark:bg-transparent"
-    >
+    <section id="features" className="py-16 md:py-32">
       <div className="@container mx-auto max-w-5xl px-6">
         <div className="text-center">
           <h2 className="text-balance text-4xl font-semibold lg:text-5xl">
@@ -17,74 +41,35 @@ export default function S1FeaturesSection() {
             Powerful Linux-based platform for industrial IoT deployments.
           </p>
         </div>
-        <Card className="@min-4xl:max-w-full @min-4xl:grid-cols-2 @min-4xl:divide-x @min-4xl:divide-y-0 mx-auto mt-8 grid max-w-sm divide-y overflow-hidden shadow-zinc-950/5 *:text-center md:mt-16">
-          <div className="group shadow-zinc-950/5">
-            <CardHeader className="pb-3">
-              <CardDecorator>
-                <Server className="size-6" aria-hidden />
-              </CardDecorator>
+        <Card className="@min-4xl:max-w-full mx-auto mt-8 overflow-hidden shadow-zinc-950/5 *:text-center md:mt-16">
+          {[
+            { row: features.slice(0, 2), key: "top" },
+            { row: features.slice(2), key: "bottom" },
+          ].map(({ row, key }) => (
+            <div
+              key={key}
+              className={`grid max-w-sm @min-4xl:max-w-full @min-4xl:grid-cols-2 divide-y @min-4xl:divide-x @min-4xl:divide-y-0 mx-auto${key === "bottom" ? " border-t mx-6 pt-6" : " pb-6"}`}
+            >
+              {row.map((feature) => {
+                const Icon = feature.icon;
+                return (
+                  <div key={feature.title} className="group shadow-zinc-950/5">
+                    <CardHeader className="pb-3">
+                      <CardDecorator>
+                        <Icon className="size-6" aria-hidden />
+                      </CardDecorator>
 
-              <h3 className="mt-6 font-medium">Linux-Based Platform</h3>
-            </CardHeader>
+                      <h3 className="mt-6 font-medium">{feature.title}</h3>
+                    </CardHeader>
 
-            <CardContent>
-              <p className="text-sm">
-                Runs on a Linux-based platform for scalability and reliability
-                in industrial IoT applications.
-              </p>
-            </CardContent>
-          </div>
-
-          <div className="group shadow-zinc-950/5">
-            <CardHeader className="pb-3">
-              <CardDecorator>
-                <Network className="size-6" aria-hidden />
-              </CardDecorator>
-
-              <h3 className="mt-6 font-medium">Robust Connectivity</h3>
-            </CardHeader>
-
-            <CardContent>
-              <p className="mt-3 text-sm">
-                Provides reliable connectivity for industrial environments,
-                ensuring seamless communication across devices.
-              </p>
-            </CardContent>
-          </div>
-
-          <div className="group shadow-zinc-950/5">
-            <CardHeader className="pb-3">
-              <CardDecorator>
-                <Cpu className="size-6" aria-hidden />
-              </CardDecorator>
-
-              <h3 className="mt-6 font-medium">RISC-V Architecture</h3>
-            </CardHeader>
-
-            <CardContent>
-              <p className="mt-3 text-sm">
-                Built on RISC-V architecture for high-performance computing and
-                scalability in demanding applications.
-              </p>
-            </CardContent>
-          </div>
-
-          <div className="group shadow-zinc-950/5">
-            <CardHeader className="pb-3">
-              <CardDecorator>
-                <Cloud className="size-6" aria-hidden />
-              </CardDecorator>
-
-              <h3 className="mt-6 font-medium">Edge-to-Cloud Integration</h3>
-            </CardHeader>
-
-            <CardContent>
-              <p className="mt-3 text-sm">
-                Seamlessly integrates edge devices with cloud systems for
-                efficient data processing and management.
-              </p>
-            </CardContent>
-          </div>
+                    <CardContent>
+                      <p className="text-sm">{feature.description}</p>
+                    </CardContent>
+                  </div>
+                );
+              })}
+            </div>
+          ))}
         </Card>
       </div>
     </section>

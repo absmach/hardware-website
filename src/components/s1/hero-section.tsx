@@ -3,13 +3,12 @@
 import { ArrowRight, Rocket } from "lucide-react";
 import Link from "next/link";
 import React from "react";
-import { Logo } from "@/components/logo";
 import { Button } from "@/components/ui/button";
 
 const menuItems = [
   { name: "About", href: "#about" },
   { name: "Features", href: "#features" },
-  { name: "Documentation", href: "/docs" },
+  { name: "Documentation", href: "/docs/s1-gateway" },
 ];
 
 export default function S1HeroSection() {
@@ -30,7 +29,7 @@ export default function S1HeroSection() {
                   aria-label="home"
                   className="flex items-center space-x-2"
                 >
-                  <Logo />
+                  <span className="text-xl font-bold">S0 Gateway</span>
                 </Link>
               </div>
 

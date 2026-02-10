@@ -9,6 +9,45 @@ import {
 import type { ReactNode } from "react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 
+const features = [
+  {
+    icon: Radio,
+    title: "Multi-Protocol",
+    description:
+      "Support for Wireless M-Bus, NB-IoT, LTE-M, WiFi, and BLE. Connect any device with any protocol.",
+  },
+  {
+    icon: BatteryCharging,
+    title: "Low Power Design",
+    description:
+      "Ultra-low power operation with battery backup and charging. Perfect for remote deployments.",
+  },
+  {
+    icon: Cpu,
+    title: "Modular Architecture",
+    description:
+      "ESP32-C6 RISC-V core with expansion options. Add Ethernet, M-Bus, and SD card logging.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Secure by Design",
+    description:
+      "Built on Zephyr RTOS with secure boot and encrypted communication for mission-critical apps.",
+  },
+  {
+    icon: Zap,
+    title: "Edge Computing",
+    description:
+      "Run Wasm workloads at the edge. Perform AI inference and data processing locally.",
+  },
+  {
+    icon: Settings2,
+    title: "Open Source",
+    description:
+      "All hardware designs and firmware are open source. Customize and extend as needed.",
+  },
+];
+
 export default function S0FeaturesSection() {
   return (
     <section
@@ -25,108 +64,35 @@ export default function S0FeaturesSection() {
             a modular, open-source platform.
           </p>
         </div>
-        <Card className="@min-4xl:max-w-full @min-4xl:grid-cols-3 @min-4xl:divide-x @min-4xl:divide-y-0 mx-auto mt-8 grid max-w-sm divide-y overflow-hidden shadow-zinc-950/5 *:text-center md:mt-16">
-          <div className="group shadow-zinc-950/5">
-            <CardHeader className="pb-3">
-              <CardDecorator>
-                <Radio className="size-6" aria-hidden />
-              </CardDecorator>
+        <Card className="@min-4xl:max-w-full mx-auto mt-8 overflow-hidden shadow-zinc-950/5 *:text-center md:mt-16">
+          {[
+            { row: features.slice(0, 3), key: "top" },
+            { row: features.slice(3), key: "bottom" },
+          ].map(({ row, key }) => (
+            <div
+              key={key}
+              className={`grid max-w-sm @min-4xl:max-w-full @min-4xl:grid-cols-3 divide-y @min-4xl:divide-x @min-4xl:divide-y-0 mx-auto${key === "bottom" ? " border-t pt-6" : "pb-6"}`}
+            >
+              {row.map((feature) => {
+                const Icon = feature.icon;
+                return (
+                  <div key={feature.title} className="group shadow-zinc-950/5">
+                    <CardHeader className="pb-3">
+                      <CardDecorator>
+                        <Icon className="size-6" aria-hidden />
+                      </CardDecorator>
 
-              <h3 className="mt-6 font-medium">Multi-Protocol</h3>
-            </CardHeader>
+                      <h3 className="mt-6 font-medium">{feature.title}</h3>
+                    </CardHeader>
 
-            <CardContent>
-              <p className="text-sm">
-                Support for Wireless M-Bus, NB-IoT, LTE-M, WiFi, and BLE.
-                Connect any device with any protocol.
-              </p>
-            </CardContent>
-          </div>
-
-          <div className="group shadow-zinc-950/5">
-            <CardHeader className="pb-3">
-              <CardDecorator>
-                <BatteryCharging className="size-6" aria-hidden />
-              </CardDecorator>
-
-              <h3 className="mt-6 font-medium">Low Power Design</h3>
-            </CardHeader>
-
-            <CardContent>
-              <p className="mt-3 text-sm">
-                Ultra-low power operation with battery backup and charging.
-                Perfect for remote deployments.
-              </p>
-            </CardContent>
-          </div>
-
-          <div className="group shadow-zinc-950/5">
-            <CardHeader className="pb-3">
-              <CardDecorator>
-                <Cpu className="size-6" aria-hidden />
-              </CardDecorator>
-
-              <h3 className="mt-6 font-medium">Modular Architecture</h3>
-            </CardHeader>
-
-            <CardContent>
-              <p className="mt-3 text-sm">
-                ESP32-C6 RISC-V core with expansion options. Add Ethernet,
-                M-Bus, and SD card logging.
-              </p>
-            </CardContent>
-          </div>
-
-          <div className="group shadow-zinc-950/5">
-            <CardHeader className="pb-3">
-              <CardDecorator>
-                <ShieldCheck className="size-6" aria-hidden />
-              </CardDecorator>
-
-              <h3 className="mt-6 font-medium">Secure by Design</h3>
-            </CardHeader>
-
-            <CardContent>
-              <p className="text-sm">
-                Built on Zephyr RTOS with secure boot and encrypted
-                communication for mission-critical apps.
-              </p>
-            </CardContent>
-          </div>
-
-          <div className="group shadow-zinc-950/5">
-            <CardHeader className="pb-3">
-              <CardDecorator>
-                <Zap className="size-6" aria-hidden />
-              </CardDecorator>
-
-              <h3 className="mt-6 font-medium">Edge Computing</h3>
-            </CardHeader>
-
-            <CardContent>
-              <p className="mt-3 text-sm">
-                Run Wasm workloads at the edge. Perform AI inference and data
-                processing locally.
-              </p>
-            </CardContent>
-          </div>
-
-          <div className="group shadow-zinc-950/5">
-            <CardHeader className="pb-3">
-              <CardDecorator>
-                <Settings2 className="size-6" aria-hidden />
-              </CardDecorator>
-
-              <h3 className="mt-6 font-medium">Open Source</h3>
-            </CardHeader>
-
-            <CardContent>
-              <p className="mt-3 text-sm">
-                All hardware designs and firmware are open source. Customize and
-                extend as needed.
-              </p>
-            </CardContent>
-          </div>
+                    <CardContent>
+                      <p className="text-sm">{feature.description}</p>
+                    </CardContent>
+                  </div>
+                );
+              })}
+            </div>
+          ))}
         </Card>
       </div>
     </section>

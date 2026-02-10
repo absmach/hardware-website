@@ -125,42 +125,6 @@ export default function ProductsSection() {
             );
           })}
         </div>
-
-        <div className="mt-16">
-          <Card className="group relative overflow-hidden border-2 bg-gradient-to-br from-muted/50 to-muted/20 transition-all hover:border-primary/30 hover:shadow-lg">
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
-
-            <CardHeader className="relative text-center">
-              <div className="mx-auto mb-4 flex size-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/20 to-primary/10 ring-1 ring-primary/20">
-                <CircuitBoard className="size-8 text-primary" />
-              </div>
-              <CardTitle className="text-2xl">
-                BeagleV-Fire Hat Configuration
-              </CardTitle>
-              <CardDescription className="text-base">
-                Powerful Linux-based gateway solution
-              </CardDescription>
-            </CardHeader>
-
-            <CardContent className="relative">
-              <p className="text-center text-muted-foreground">
-                S0 plugs directly onto the BeagleV-Fire RISC-V Linux board,
-                combining S0's multi-radio capabilities with Linux's processing
-                power for sophisticated applications like edge AI, local data
-                processing, and protocol translation—all on an open RISC-V
-                architecture.
-              </p>
-            </CardContent>
-
-            <CardFooter className="relative justify-center">
-              <Link href="/docs/beaglev-fire-hat">
-                <Button size="lg" className="gap-2">
-                  Learn About BeagleV-Fire Hat <MoveRight className="w-4 h-4" />
-                </Button>
-              </Link>
-            </CardFooter>
-          </Card>
-        </div>
       </div>
     </section>
   );

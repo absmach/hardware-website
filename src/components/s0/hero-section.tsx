@@ -3,7 +3,6 @@
 import { ArrowRight, Rocket } from "lucide-react";
 import Link from "next/link";
 import React from "react";
-import { Logo } from "@/components/logo";
 import { Button } from "@/components/ui/button";
 
 const menuItems = [
@@ -30,7 +29,7 @@ export default function S0HeroSection() {
                   aria-label="home"
                   className="flex items-center space-x-2"
                 >
-                  <Logo />
+                  <span className="text-xl font-bold">S0 Gateway</span>
                 </Link>
               </div>
 
