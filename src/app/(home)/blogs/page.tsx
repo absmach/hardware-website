@@ -7,7 +7,7 @@ export default function Page() {
   );
 
   return (
-    <main className="mx-auto w-full max-w-page px-4 p-24 md:p-24">
+    <main className="mx-auto w-full max-w-7xl px-4 sm:px-6 py-12 sm:py-20 lg:py-28">
       <div className="mb-8">
         <h1 className="mb-4 text-3xl font-bold">Blog</h1>
         <p className="text-fd-muted-foreground">

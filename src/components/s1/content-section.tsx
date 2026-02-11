@@ -2,8 +2,8 @@ import { assetPath } from "@/lib/base-path";
 
 export default function S1ContentSection() {
   return (
-    <section id="about" className="py-16 md:py-32 border-b">
-      <div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-16">
+    <section id="about" className="py-12 sm:py-20 lg:py-28 border-b">
+      <div className="mx-auto max-w-5xl space-y-8 px-4 sm:px-6 md:space-y-16">
         <h2 className="relative z-10 max-w-xl text-4xl font-medium lg:text-5xl">
           What is S1?
         </h2>

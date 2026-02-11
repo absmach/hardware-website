@@ -43,7 +43,7 @@ const faqs = [
 ];
 
 export const FAQSection = () => (
-  <div id="faq" className="w-full py-16 px-4 sm:py-20 lg:py-40 sm:px-6">
+  <div id="faq" className="w-full py-12 sm:py-20 lg:py-28 px-4 sm:px-6">
     <div className="container mx-auto">
       <div className="flex flex-col gap-10">
         <div className="flex text-center justify-center items-center gap-4 flex-col">

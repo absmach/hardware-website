@@ -77,8 +77,8 @@ export default function S0HeroSection() {
       </header>
       <main className="overflow-hidden pt-14 md:pt-0">
         <section className="relative border-b container mx-auto">
-          <div className="relative py-16 sm:py-24 lg:py-28">
-            <div className="mx-auto max-w-7xl px-6 md:px-12">
+          <div className="relative py-12 sm:py-20 lg:py-28">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6">
               <div className="text-center sm:mx-auto sm:w-10/12 lg:mr-auto lg:mt-0 lg:w-4/5">
                 <Link
                   href="/docs/s0-gateway"

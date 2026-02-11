@@ -50,8 +50,8 @@ export default function FeatureSection() {
   ];
 
   return (
-    <section className="py-16 md:py-32">
-      <div className="@container mx-auto max-w-5xl px-6">
+    <section className="py-12 sm:py-20 lg:py-28">
+      <div className="@container mx-auto max-w-5xl px-4 sm:px-6">
         <div className="text-center">
           <h2 className="text-balance text-4xl font-semibold lg:text-5xl">
             Industrial IoT Gateway Platform

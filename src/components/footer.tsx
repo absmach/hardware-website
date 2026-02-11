@@ -29,8 +29,8 @@ const Logo = () => {
 
 export default function FooterSection() {
   return (
-    <footer className="py-8 sm:py-12">
-      <div className="container mx-auto space-y-6 px-4">
+    <footer className="py-12 sm:py-20 lg:py-28">
+      <div className="container mx-auto space-y-6 px-4 sm:px-6">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           <div className="space-y-4 sm:col-span-2 lg:col-span-1">
             <Logo />
