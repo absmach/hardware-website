@@ -114,7 +114,7 @@ export const HeroSection = () => {
               ...transitionVariants,
             }}
           >
-            <div className="mask-b-from-55% relative mt-8 overflow-hidden px-2 sm:mt-12 md:mt-20 xl:-mr-56">
+            <div className="mask-b-from-55% relative mt-8 overflow-hidden px-2 sm:mt-12 md:mt-20">
               <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-5xl overflow-hidden rounded-2xl border p-4 shadow-lg shadow-zinc-950/15 ring-1">
                 <video
                   className="aspect-15/8 relative rounded-2xl w-full"
