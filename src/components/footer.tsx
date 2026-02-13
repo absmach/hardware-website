@@ -144,13 +144,25 @@ export default function FooterSection() {
             </Link>
           </div>
           <div className="flex gap-4 text-xs">
-            <Link href="/terms" className="hover:underline">
+            <Link
+              href="https://www.absmach.eu/terms/"
+              target="_blank"
+              className="hover:underline"
+            >
               Terms of Service
             </Link>
-            <Link href="/privacy" className="hover:underline">
+            <Link
+              href="https://www.absmach.eu/privacy/"
+              target="_blank"
+              className="hover:underline"
+            >
               Privacy Policy
             </Link>
-            <Link href="/imprint" className="hover:underline">
+            <Link
+              href="https://www.absmach.eu/imprint/"
+              target="_blank"
+              className="hover:underline"
+            >
               Imprint
             </Link>
           </div>
