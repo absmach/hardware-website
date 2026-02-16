@@ -26,7 +26,7 @@ export const linkItems: LinkItemType[] = [
   },
   {
     text: "Blogs",
-    url: "/blogs",
+    url: "https://www.absmach.eu/blog/?category=hardware",
     icon: <LayoutTemplate />,
     active: "url",
   },

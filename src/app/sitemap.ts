@@ -1,26 +1,10 @@
 import type { MetadataRoute } from "next";
-import { blogs, source } from "@/lib/source";
+import { source } from "@/lib/source";
 
 const baseUrl =
   process.env.NEXT_PUBLIC_BASE_URL || "https://hardware.absmach.eu";
 
 export const dynamic = "force-static";
-
-function generateBlogsSitemap(): MetadataRoute.Sitemap {
-  const posts = blogs.getPages();
-  const sitemap: MetadataRoute.Sitemap = [];
-
-  for (const post of posts) {
-    sitemap.push({
-      url: `${baseUrl}${post.url}`,
-      lastModified: new Date(post.data.date).toISOString(),
-      changeFrequency: "monthly",
-      priority: 0.6,
-    });
-  }
-
-  return sitemap;
-}
 
 function generateDocsSitemap(): MetadataRoute.Sitemap {
   const pages = source.getPages();
@@ -47,18 +31,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: `${baseUrl}/blogs`,
-      lastModified: new Date().toISOString(),
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
       url: `${baseUrl}/docs`,
       lastModified: new Date().toISOString(),
       changeFrequency: "weekly",
       priority: 0.9,
     },
-    ...generateBlogsSitemap(),
     ...generateDocsSitemap(),
   ];
 }

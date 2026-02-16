@@ -17,7 +17,6 @@ Modular expansion board with W5500 Ethernet, TSS721A M-Bus transceiver, SD card 
 - Product showcase and specifications
 - Comprehensive documentation with MDX support
 - Use case examples and deployment guides
-- Blog for updates and announcements
 - Static site generation for optimal performance
 - Search functionality powered by Orama
 - Responsive design with dark mode support
