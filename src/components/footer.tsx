@@ -13,16 +13,12 @@ const Logo = () => {
   return (
     <Link href="/" className="flex items-center space-x-2">
       <img
-        src={assetPath("/logo-black.svg")}
-        className="h-12 w-auto dark:hidden"
-        alt="Abstract Machines Logo"
+        src={assetPath("/abstract-machines.svg")}
+        height={120}
+        width={120}
+        className="invert dark:invert-0"
+        alt="Abtract Machines logo"
       />
-      <img
-        src={assetPath("/logo-white.svg")}
-        className="h-12 w-auto hidden dark:block"
-        alt="Abstract Machines Logo"
-      />
-      Hardware
     </Link>
   );
 };
@@ -35,8 +31,9 @@ export default function FooterSection() {
           <div className="space-y-4 sm:col-span-2 lg:col-span-1">
             <Logo />
             <p className="text-muted-foreground text-sm">
-              Open-source IoT gateway hardware for smart metering, industrial
-              automation, and edge computing. Powered by Abstract Machines.
+              Abstract Machines, creators of S0 and S1, builds secure,
+              open-source IoT gateway hardware for smart metering, industrial
+              automation, and edge computing.
             </p>
             <div className="flex space-x-4">
               <Link
