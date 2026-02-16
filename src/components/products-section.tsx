@@ -31,19 +31,19 @@ export default function ProductsSection() {
     },
     {
       icon: CircuitBoard,
-      name: "S0 Base Board",
-      tagline: "Expand your gateway capabilities",
+      name: "S1 IoT Gateway",
+      tagline: "Linux-powered gateway for industrial IoT",
       description:
-        "Modular expansion board for S0 with W5500 Ethernet, TSS721A M-Bus transceiver, SD card logging, and robust power management. Perfect for industrial installations and smart metering.",
+        "S1 combines the S0 module with BeagleV-Fire to deliver a full Linux-based gateway. Ideal for demanding industrial IoT deployments that require advanced processing, rich OS support, and seamless edge-to-cloud integration.",
       features: [
-        "W5500 Ethernet Controller",
-        "TSS721A M-Bus Transceiver",
-        "SD Card Data Logging",
-        "24V DC Power Input",
-        "Battery Backup & Charging",
-        "DIN-Rail Mountable",
+        "S0 Board + BeagleV-Fire",
+        "Linux-Based OS",
+        "RISC-V Architecture",
+        "Advanced Edge Computing",
+        "Edge-to-Cloud Integration",
+        "Industrial-Grade Connectivity",
       ],
-      docsLink: "/docs/base-board",
+      docsLink: "/docs/s1-gateway",
       learnMoreLink: "/s1",
     },
   ];
@@ -56,9 +56,10 @@ export default function ProductsSection() {
             Modular Hardware for Every Use Case
           </h2>
           <p className="mt-4 text-muted-foreground text-lg">
-            Choose the right combination of S0 gateway and expansion boards for
-            your IoT deployment. Mix and match to meet your specific
-            requirements.
+            Choose the right gateway for your IoT deployment. S0 is a
+            Zephyr-based gateway built on the S0 Board and Baseboard. S1 is a
+            Linux-based gateway combining the S0 Board with BeagleV-Fire for
+            more demanding industrial workloads.
           </p>
         </div>
 

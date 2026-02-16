@@ -5,11 +5,15 @@ description: Swiss knife for wireless IoT - Modular multi-protocol IoT gateway
 
 # S0 IoT Gateway
 
-The **S0 IoT Gateway** is a robust and modular IoT gateway designed for smart metering, industrial IoT, and edge computing applications. Built around the ESP32-C6 microcontroller with RISC-V core, S0 delivers multi-protocol connectivity with professional-grade reliability.
+The **S0 IoT Gateway** is a **Zephyr-based IoT gateway** combining the **S0 Board** with the **Baseboard**. Built around the ESP32-C6 RISC-V microcontroller running Zephyr RTOS, S0 delivers multi-protocol wireless connectivity for smart metering, industrial IoT, and edge computing applications.
+
+> **S0 = S0 Board + Baseboard — Zephyr RTOS**
+>
+> Looking for a Linux-based gateway? See the [S1 Gateway](/docs/s1-gateway), which combines the S0 Board with BeagleV-Fire.
 
 ## Overview
 
-S0 is capable of collecting data from multiple wireless protocols and transmitting it securely to the cloud via various connectivity options. It integrates with [Magistrala](https://github.com/absmach/magistrala), a modern, scalable, secure, open-source IoT platform.
+S0 collects data from multiple wireless protocols and transmits it securely to the cloud. It integrates with [Magistrala](https://github.com/absmach/magistrala), a modern, scalable, open-source IoT platform.
 
 ### Key Problem Statement
 

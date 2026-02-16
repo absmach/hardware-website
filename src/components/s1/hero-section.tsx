@@ -25,7 +25,7 @@ export default function S1HeroSection() {
                 aria-label="home"
                 className="flex items-center space-x-2"
               >
-                <span className="text-lg font-bold sm:text-xl">S0 Gateway</span>
+                <span className="text-lg font-bold sm:text-xl">S1 Gateway</span>
               </Link>
 
               <div className="hidden lg:flex lg:items-center lg:gap-8">

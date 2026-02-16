@@ -94,14 +94,14 @@ export default function S0HeroSection() {
                 </Link>
 
                 <h1 className="mt-8 text-2xl font-semibold sm:text-4xl md:text-5xl xl:[line-height:1.125]">
-                  S0 – Low-power Gateway <br className="hidden sm:block" /> for
-                  Wireless IoT
+                  S0 – Zephyr-based Gateway <br className="hidden sm:block" />{" "}
+                  for Wireless IoT
                 </h1>
                 <p className="mx-auto mt-6 max-w-2xl text-wrap text-base sm:text-lg sm:mt-8">
-                  S0 is a low-power IoT gateway based on RISC-V architecture,
-                  designed for constrained environments. It provides efficient
-                  connectivity and processing for IoT devices with minimal
-                  energy consumption, making it ideal for edge deployments.
+                  S0 combines the S0 Board with the Baseboard into a low-power,
+                  Zephyr RTOS gateway. Built on ESP32-C6 RISC-V, it delivers
+                  multi-protocol wireless connectivity for smart metering,
+                  industrial automation, and constrained edge deployments.
                 </p>
 
                 <div className="mt-8">

@@ -1,31 +1,43 @@
-import { Cloud, Cpu, Network, Server } from "lucide-react";
+import { Cloud, Cpu, Layers, Network, Server, Wifi } from "lucide-react";
 import type { ReactNode } from "react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 
 const features = [
   {
-    icon: Server,
-    title: "Linux-Based Platform",
+    icon: Layers,
+    title: "S0 Board + BeagleV-Fire",
     description:
-      "Runs on a Linux-based platform for scalability and reliability in industrial IoT applications.",
+      "S1 combines the S0 module with the BeagleV-Fire board, pairing multi-protocol wireless capabilities with powerful Linux compute in a single gateway.",
   },
   {
-    icon: Network,
-    title: "Robust Connectivity",
+    icon: Server,
+    title: "Linux-Based OS",
     description:
-      "Provides reliable connectivity for industrial environments, ensuring seamless communication across devices.",
+      "Runs a full Linux operating system, enabling richer software stacks, containerised workloads, and support for a wide range of open-source tools.",
   },
   {
     icon: Cpu,
     title: "RISC-V Architecture",
     description:
-      "Built on RISC-V architecture for high-performance computing and scalability in demanding applications.",
+      "Built on RISC-V architecture, delivering high-performance computing for demanding industrial and edge AI applications.",
+  },
+  {
+    icon: Wifi,
+    title: "Multi-Protocol Wireless",
+    description:
+      "Inherits the S0 module's multi-protocol connectivity — Wireless M-Bus, NB-IoT, LTE-M, WiFi, and BLE — for versatile IoT deployments.",
   },
   {
     icon: Cloud,
     title: "Edge-to-Cloud Integration",
     description:
-      "Seamlessly integrates edge devices with cloud systems for efficient data processing and management.",
+      "Seamlessly integrates edge devices with cloud platforms via MQTT, CoAP, and WebSockets, powered by the Magistrala IoT platform.",
+  },
+  {
+    icon: Network,
+    title: "Industrial-Grade Reliability",
+    description:
+      "Designed for demanding industrial environments requiring high-performance computing, robust connectivity, and long-term operational stability.",
   },
 ];
 
@@ -38,10 +50,11 @@ export default function S1FeaturesSection() {
             S1 Features
           </h2>
           <p className="mt-4 text-muted-foreground">
-            Powerful Linux-based platform for industrial IoT deployments.
+            S0 Board + BeagleV-Fire: the Linux-based gateway for demanding
+            industrial and edge computing deployments.
           </p>
         </div>
-        <div className="mx-auto mt-8 grid max-w-sm grid-cols-1 gap-6 sm:max-w-full sm:grid-cols-2 md:mt-16">
+        <div className="mx-auto mt-8 grid max-w-sm grid-cols-1 gap-6 sm:max-w-full sm:grid-cols-2 lg:grid-cols-3 md:mt-16">
           {features.map((feature) => {
             const Icon = feature.icon;
             return (

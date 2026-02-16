@@ -13,32 +13,42 @@ const faqs = [
   {
     question: "What is the S0 Gateway?",
     answer:
-      "The S0 Gateway is a modular IoT gateway solution combining our S0 module with the Base Board. It provides multi-protocol connectivity (LoRa, Bluetooth, WiFi, cellular) for smart metering, industrial IoT, and edge computing applications. The open-source hardware design ensures transparency and customization capabilities.",
+      "The S0 Gateway is a modular, Zephyr-based IoT gateway combining the S0 Board with the Baseboard. It provides multi-protocol connectivity (Wireless M-Bus, NB-IoT, LTE-M, WiFi, BLE) for smart metering, industrial IoT, and edge computing applications. Running Zephyr RTOS on an ESP32-C6 RISC-V core, S0 is optimised for low-power, constrained environments.",
+  },
+  {
+    question: "What is the S1 Gateway?",
+    answer:
+      "The S1 Gateway is a Linux-based IoT gateway that combines the S0 Board with the BeagleV-Fire board. Unlike S0, which runs Zephyr RTOS, S1 runs a full Linux operating system on RISC-V architecture. This makes it ideal for applications that require advanced processing power, containerised workloads, edge AI inference, or richer software stacks not available on a bare-metal RTOS.",
+  },
+  {
+    question: "What is the difference between S0 and S1?",
+    answer:
+      "S0 is a Zephyr-based gateway built from the S0 Board and the Baseboard — designed for low-power, constrained IoT deployments. S1 is a Linux-based gateway built from the S0 Board and the BeagleV-Fire — designed for industrial IoT workloads that demand a full Linux OS, greater compute power, and edge-to-cloud integration. Both gateways share the same S0 Board and its multi-protocol wireless capabilities.",
+  },
+  {
+    question: "Is S1 a standalone gateway?",
+    answer:
+      "Yes. S1 is a complete, standalone Linux-based IoT gateway. It combines the S0 module's multi-protocol wireless connectivity (Wireless M-Bus, NB-IoT, LTE-M, WiFi, BLE) with the BeagleV-Fire's Linux compute capabilities. You do not need a separate gateway — S1 handles both edge processing and cloud connectivity on its own.",
   },
   {
     question: "What wireless protocols are supported?",
     answer:
-      "Our IoT gateway supports multiple wireless protocols including LoRaWAN for long-range low-power communication, Bluetooth LE for short-range device connectivity, WiFi for high-bandwidth applications, and cellular (LTE-M/NB-IoT) for wide-area coverage. You can configure multiple protocols simultaneously for hybrid deployments.",
+      "Both S0 and S1 gateways support multiple wireless protocols via the S0 module: Wireless M-Bus (868 MHz) for smart metering, Bluetooth LE for short-range device connectivity, WiFi for high-bandwidth applications, and cellular (LTE-M/NB-IoT) for wide-area coverage. Multiple protocols can be active simultaneously for hybrid deployments.",
   },
   {
     question: "Is the hardware open source?",
     answer:
-      "Yes! All our hardware designs, schematics, and PCB layouts are open source and available on our GitHub repository. This allows you to customize the hardware for your specific needs, audit the design for security, and even manufacture your own units. We believe in transparency and community-driven development.",
+      "Yes. All hardware designs, schematics, and PCB layouts are open source and available on our GitHub repository. This allows you to customise the hardware for your specific needs, audit the design for security, and manufacture your own units. We believe in transparency and community-driven development.",
   },
   {
-    question: "What kind of professional support is available?",
+    question: "What are typical use cases for S0 and S1?",
     answer:
-      "We offer comprehensive professional support including hardware customization, firmware development, integration assistance, deployment planning, and ongoing technical support. Whether you need help with initial setup or scaling to thousands of devices, our team has expertise in industrial IoT deployments.",
-  },
-  {
-    question: "What are typical use cases for the S0 Gateway?",
-    answer:
-      "Common applications include smart metering for utilities (water, gas, electricity), industrial automation with sensor networks, building management systems, environmental monitoring, asset tracking, and agricultural IoT. The modular design adapts to various deployment scenarios from single-site installations to distributed networks.",
+      "S0 is well-suited for smart metering (water, gas, electricity), building management systems, environmental monitoring, and agricultural IoT where low-power Zephyr-based operation is preferred. S1 excels in industrial automation, edge AI inference, protocol translation gateways, smart city deployments, and enterprise IoT solutions that benefit from a full Linux environment.",
   },
   {
     question: "How do I get started with the hardware?",
     answer:
-      "Start by reviewing our technical documentation to understand the hardware specifications and capabilities. You can order development kits directly, or contact us for custom configurations. Our documentation includes setup guides, integration examples, and API references to help you deploy quickly. Professional support is available for complex deployments.",
+      "Start by reviewing our technical documentation for the gateway you need — S0 for Zephyr-based deployments, S1 for Linux-based deployments. You can order development kits directly, or contact us for custom configurations. Our documentation includes setup guides, integration examples, and API references. Professional support is available for complex deployments.",
   },
 ];
 
