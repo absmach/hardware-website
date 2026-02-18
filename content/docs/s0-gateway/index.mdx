@@ -5,7 +5,9 @@ description: Swiss knife for wireless IoT - Modular multi-protocol IoT gateway
 
 # S0 IoT Gateway
 
-The **S0 IoT Gateway** is a **Zephyr-based IoT gateway** combining the **S0 Board** with the **Baseboard**. Built around the ESP32-C6 RISC-V microcontroller running Zephyr RTOS, S0 delivers multi-protocol wireless connectivity for smart metering, industrial IoT, and edge computing applications.
+![S0 IoT Gateway](../images/s0.png)
+
+The **S0 IoT Gateway** is a robust and modular IoT Gateway for smart metering applications. Built around the **ESP32-C6** microcontroller with a RISC-V core, it runs **Zephyr RTOS** and supports both **Wireless M-Bus (wMBus)** and **wired M-Bus** utility meters, transmitting collected data securely to [Magistrala](https://github.com/absmach/magistrala).
 
 > **S0 = S0 Board + Baseboard — Zephyr RTOS**
 >
@@ -15,27 +17,20 @@ The **S0 IoT Gateway** is a **Zephyr-based IoT gateway** combining the **S0 Boar
 
 S0 collects data from multiple wireless protocols and transmits it securely to the cloud. It integrates with [Magistrala](https://github.com/absmach/magistrala), a modern, scalable, open-source IoT platform.
 
-### Key Problem Statement
-
-IoT deployments face several critical challenges:
-
-- Fragmented infrastructure requiring multiple gateways for different protocols
-- High power consumption unsuitable for battery-powered installations
-- Closed proprietary platforms limiting flexibility
-- Lack of secure, flexible edge compute capabilities
-- Complex cloud integration increasing operational costs
-
-S0 addresses these challenges with a unified, open-source platform.
-
-## Hardware Specifications
+## Hardware Architecture
 
 ### Core Components
 
-- **Microcontroller**: ESP32-C6 with RISC-V core
-- **Wireless M-Bus**: RC-S2LP module (868 MHz)
-- **Cellular**: SIM7080G module (NB-IoT / LTE-M)
-- **WiFi & BLE**: Integrated in ESP32-C6
-- **Operating System**: Zephyr RTOS
+| Component         | Description                                   |
+| ----------------- | --------------------------------------------- |
+| ESP32-C6          | Main microcontroller (RISC-V, WiFi, BLE)      |
+| RC-S2LP           | Wireless M-Bus 868 MHz transceiver            |
+| SIM7080G          | NB-IoT/LTE-M module                           |
+| Ethernet          | (Optional) local network through S0 Baseboard |
+| USB-C & Terminals | For power and debug                           |
+| GNSS Support      | Optional via SIM7080G for asset tracking      |
+
+The board is compact and optimized for IP-rated DIN-rail enclosures for industrial/outdoor environments. It features side-mounted IPEX connectors for each antenna (WiFi, GNSS, NB-IoT, wMBus).
 
 ### Connectivity Options
 
@@ -44,10 +39,25 @@ S0 addresses these challenges with a unified, open-source platform.
 
 ### Power Management
 
-- Multiple power input options
-- Battery backup support
-- Ultra-low power operation for remote deployments
-- Optimized for LPWAN and cellular IoT use cases
+The S0 board can be powered in 3 ways:
+
+- **USB-C**: For development and testing
+- **Power JST**: Battery of maximum 7.4V connected via the battery JST connector
+- **Baseboard**: The Baseboard supplies both 5V and 3.3V to the S0 board
+
+## Wireless Communication
+
+- **WiFi/BLE**: The ESP32-C6 provides 2.4GHz Wi-Fi and BLE. An IPEX connector on the ESP32-C6 accepts a 2.4GHz antenna of your choice.
+
+- **Wireless M-Bus**: The RC-S2LP module enables wireless M-Bus communication with wMBus meters at 868 MHz. An IPEX connector accepts a 868 MHz antenna.
+
+- **NB-IoT / LTE-M**: The SIM7080G module provides NB-IoT/LTE-M connectivity. Two IPEX connectors handle RF (wireless) and GNSS (GPS) antennas. The SIM7080G is controlled via AT commands from the ESP32.
+
+## Firmware and Flashing
+
+The S0 board uses the ESP32-C6 as its main microcontroller and can be programmed using any framework of your choice. Firmware is flashed through the USB-C connector.
+
+Debug is possible via the USB-C connector or the JTAG pins labelled on the board, enabling both on-site and off-site debugging.
 
 ## Software Stack
 
@@ -68,6 +78,27 @@ Native integration with Magistrala IoT platform:
 - Secure cloud connectivity
 - Open-source and patent-free
 - Scalable architecture
+
+## Software Features
+
+The gateway firmware:
+
+- Collects meter data periodically from both wired and wireless M-Bus meters
+- Transmits structured data securely to Magistrala via MQTT
+- Manages reconnections and retry logic for unreliable NB-IoT networks
+- Logs diagnostics and status via UART or remote logging service
+
+Supported communication protocols:
+
+| Protocol       | Security | Description                                           |
+| -------------- | -------- | ----------------------------------------------------- |
+| **MQTT**       | No       | Lightweight messaging protocol for IoT data exchange  |
+| **MQTTS**      | Yes      | Secure MQTT communication over TLS (mTLS supported)   |
+| **CoAP**       | No       | REST-based protocol optimized for constrained devices |
+| **CoAP DTLS**  | Yes      | Secure CoAP communication using DTLS encryption       |
+| **HTTP**       | No       | Standard web communication protocol                   |
+| **HTTPS**      | Yes      | Secure version of HTTP over TLS                       |
+| **WebSockets** | Yes      | Full-duplex communication protocol over TCP           |
 
 ## Expansion Options
 
@@ -100,7 +131,7 @@ Deploy S0 for residential and industrial utility monitoring:
 Monitor industrial machinery for anomaly detection:
 
 - Collect high-frequency sensor data
-- Real-time edge processing with Wasm
+- Real-time edge processing
 - Local anomaly detection
 - Reduced network usage
 
@@ -108,7 +139,6 @@ Monitor industrial machinery for anomaly detection:
 
 Run AI inference at the edge:
 
-- TinyML workloads via Wasm
 - Privacy-preserving processing
 - Low-latency decisions
 - Independent of cloud connectivity

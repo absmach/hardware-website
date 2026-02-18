@@ -5,89 +5,113 @@ description: Modular expansion board for S0 IoT Gateway
 
 # S0 Base Board
 
+![S0 Baseboard](../images/baseboard-front.png)
+
 The **S0 Base Board** is a modular expansion board designed to power and extend the functionality of the S0 compute module. It integrates critical components for industrial IoT and smart metering applications, making it ideal for professional deployments.
 
 ## Overview
 
-The Base Board transforms the S0 module into a complete gateway solution by adding:
+The Base Board transforms the S0 module into a complete gateway solution. The S0 board acts as a cape to the Baseboard, connected via 2x23 male headers on the S0 fitting onto the female headers of the Baseboard. The Baseboard supplies both 5V and 3.3V to the S0 board.
 
-- Wired Ethernet connectivity
-- M-Bus transceiver for utility metering
-- SD card for local data logging
-- Robust power management with backup
-- Industrial-grade mounting options
+## Features
 
-## Hardware Specifications
+- Onboard **W5500 Ethernet controller** for wired Ethernet connectivity
+- **TSS721A transceiver** for M-Bus communication
+- Wired M-Bus connection via Screw Terminal (`J1`)
+- SD Card slot for data logging
+- Dual 2×23-pin vertical pin sockets (`J5`, `J6`) for connecting the S0 board
+- 24V maximum input via Screw Terminal (`J2`)
+- Battery input and onboard charging circuit via JST connector (`J3`)
+- SPI and UART routed through `J5`/`J6` to communicate with the S0 board
+- Protection components: diodes, inductors, capacitors for power and signal integrity
+- Modular and expandable design with solder jumpers for configuration
 
-### Core Components
+## Connector Overview
 
-#### W5500 Ethernet Controller
+| Reference | Type                             | Description                   |
+| --------- | -------------------------------- | ----------------------------- |
+| `J2`      | JST Connector                    | 24V DC Power Input            |
+| `J3`      | JST Connector                    | Battery Input and Charging    |
+| `J5`      | 2×23 Pin Female Header (2.54 mm) | Main S0 interface (SPI, UART) |
+| `J6`      | 2×23 Pin Female Header (2.54 mm) | Secondary interface to S0     |
+| `JP2`     | Solder Jumper                    | Config option for W5500       |
+| `JP3`     | Solder Jumper                    | Config option for W5500       |
 
-- SPI-based Ethernet connectivity
-- Reliable wired network for industrial environments
-- Suitable for installations without wireless coverage
-- Low-power operation
+## Getting Started
 
-#### TSS721A M-Bus Transceiver
+![Baseboard Labeled](../images/bb-label.png)
 
-- UART-based interface for M-Bus communication
-- Smart metering and utility integration
+### Powering the Board
+
+The Baseboard is powered by a 24V max DC power supply. The power supply is connected via the Power Screw Terminal with polarity as marked on the board. Reverse polarity protection and overcurrent protection are enabled for safety.
+
+The Baseboard can also be powered by a 7.4V battery via the Battery JST connector.
+
+### Testing Power
+
+Power supply to the board is converted to 5V and 3.3V by the Buck Converter and 3.3V Regulator. To test, connect a multimeter and measure voltage at the 5V and 3.3V test points labelled on the board.
+
+### Ethernet
+
+The Baseboard has an onboard Ethernet port via the **W5500 Chip**, which supports Auto Negotiating modes configurable via solder joints on the board:
+
+- 10 Mbps Half-Duplex
+- 10 Mbps Full-Duplex
+- 100 Mbps Half-Duplex
+- 100 Mbps Full-Duplex
+
+### Wired M-Bus
+
+The Wired Meter Bus is a 2-wire interface connecting to Wired Meters via the MBus Screw Terminal with markings as shown on the board.
+
+### Data Storage
+
+The Baseboard is equipped with a MicroSD card slot for storing M-Bus data locally.
+
+## Power System
+
+- **Primary Power Input**: 24V via `J2`
+- **Battery Backup**: Via `J3` with charger IC circuit
+- **Protection**: Diodes for reverse polarity, inductors for EMI
+- **Power Output**: Supplies the connected S0 board through headers
+
+## Communication Interfaces
+
+### W5500 Ethernet Controller
+
+- Provides wired network connectivity
+- Communicates with the S0 via **SPI**
+- Auto-negotiation for 10/100 Mbps speeds
+
+### TSS721A M-Bus Transceiver
+
+- M-Bus driver for utility metering
+- Communicates with the S0 via **UART**
 - Compatible with standard M-Bus devices
 - Screw terminal wiring
 
-#### SD Card Slot
+### SD Card
 
-- Local data logging for offline applications
-- Edge data buffering
-- Historical data storage
-- FAT filesystem support
+- SPI interface
+- SDHC support
+- FAT32 filesystem
+- Local data logging
 
-### Power Management
+## Architecture
 
-#### Power Input
+The **S0 BaseBoard** serves as a **cape** that powers and extends the S0 module:
 
-- 24V DC input via screw terminal
-- Wide input voltage range
-- Overcurrent protection
-- Reverse polarity protection
+| Interface | Direction      | Connected To  |
+| --------- | -------------- | ------------- |
+| SPI       | S0 ↔ W5500     | Network Comm  |
+| UART      | S0 ↔ TSS721A   | M-Bus Comm    |
+| Power     | BaseBoard → S0 | 5V or Battery |
 
-#### Battery Backup
+## PCB Layout
 
-- JST connector for battery
-- Onboard charging circuit
-- Automatic switchover
-- Power outage resilience
-
-### Physical Specifications
-
-- Standard pin headers for S0 module
-- DIN-rail mountable
-- Compact form factor
-- Industrial-grade PCB
-
-## Enhanced Capabilities
-
-When S0 is connected to the Base Board, the gateway gains:
-
-### Wired Connectivity
-
-- **Ethernet**: Reliable SPI-based networking via W5500
-- **M-Bus**: Direct connection to wired utility meters
-- **Redundancy**: Multiple backhaul options (WiFi, Ethernet, Cellular)
-
-### Data Persistence
-
-- **SD Card Logging**: Store sensor readings locally
-- **Offline Operation**: Continue logging without cloud connectivity
-- **Data Buffering**: Upload when connection is restored
-- **Historical Data**: Access past measurements
-
-### Industrial Features
-
-- **24V Power**: Standard industrial voltage
-- **Battery Backup**: Uninterrupted operation during power outages
-- **DIN-Rail Mount**: Easy installation in control cabinets
-- **Robust Connectors**: Screw terminals for field wiring
+- 4-layer board with copper on F.Cu and B.Cu
+- Board thickness: ~1.6 mm (standard FR-4)
+- Modular footprint with JST and pin headers
 
 ## Use Cases
 
@@ -127,85 +151,3 @@ Deploy in commercial buildings:
 - Ethernet backbone connectivity
 - Local data aggregation
 - Centralized cloud reporting
-
-## Technical Integration
-
-### S0 Connection
-
-The Base Board provides:
-
-- Standard pin headers matching S0 pinout
-- Power delivery to S0 module
-- SPI bus for Ethernet (W5500)
-- UART for M-Bus transceiver (TSS721A)
-- SPI for SD card
-- GPIO for control signals
-
-### Communication Interfaces
-
-#### Ethernet (W5500)
-
-- SPI interface to S0
-- 10/100 Mbps
-- Auto-negotiation
-- Hardware TCP/IP stack
-
-#### M-Bus (TSS721A)
-
-- UART interface to S0
-- Master and slave modes
-- Standard M-Bus timing
-- Isolated communication
-
-#### SD Card
-
-- SPI interface
-- SDHC support
-- FAT32 filesystem
-- Hot-swappable
-
-## Power Architecture
-
-### Input Stage
-
-- 24V DC nominal input
-- 18V - 36V operating range
-- Screw terminal connection
-- Fuse protection
-
-### Battery Stage
-
-- JST connector for Li-Ion/LiPo
-- Automatic charging
-- Charge management IC
-- Voltage monitoring
-
-### Output Stage
-
-- Regulated 3.3V for S0
-- Regulated 5V for peripherals
-- Power sequencing
-- Brownout protection
-
-## Mechanical Specifications
-
-### Dimensions
-
-- PCB Size: TBD
-- Height with S0: TBD
-- DIN-rail compatible: 35mm standard
-
-### Connectors
-
-- S0 Module: Pin headers
-- Power Input: 2-pin screw terminal
-- M-Bus: 2-pin screw terminal
-- Battery: JST connector
-- Ethernet: RJ45 jack
-- SD Card: Push-push socket
-
-### Mounting
-
-- DIN-rail clip
-- Screw mounting holes
-- Enclosure compatible
