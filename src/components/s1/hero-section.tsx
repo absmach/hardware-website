@@ -44,7 +44,7 @@ export default function S1HeroSection() {
                 onClick={() => setMenuOpen(!menuOpen)}
                 className="lg:hidden p-2"
                 aria-label="Toggle menu"
-                type="submit"
+                type="button"
               >
                 {menuOpen ? (
                   <X className="size-5" />

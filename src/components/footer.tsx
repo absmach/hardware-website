@@ -39,30 +39,38 @@ export default function FooterSection() {
               <Link
                 href="https://github.com/absmach/s0"
                 target="_blank"
+                rel="noreferrer noopener"
+                aria-label="Abstract Machines on GitHub"
                 className="text-muted-foreground hover:text-foreground transition-colors"
               >
-                <Github className="size-5" />
+                <Github className="size-5" aria-hidden="true" />
               </Link>
               <Link
                 href="https://twitter.com/absmach"
                 target="_blank"
+                rel="noreferrer noopener"
+                aria-label="Abstract Machines on Twitter"
                 className="text-muted-foreground hover:text-foreground transition-colors"
               >
-                <Twitter className="size-5" />
+                <Twitter className="size-5" aria-hidden="true" />
               </Link>
               <Link
                 href="https://www.linkedin.com/company/abstract-machines"
                 target="_blank"
+                rel="noreferrer noopener"
+                aria-label="Abstract Machines on LinkedIn"
                 className="text-muted-foreground hover:text-foreground transition-colors"
               >
-                <Linkedin className="size-5" />
+                <Linkedin className="size-5" aria-hidden="true" />
               </Link>
               <Link
                 href="https://www.youtube.com/@absmach"
                 target="_blank"
+                rel="noreferrer noopener"
+                aria-label="Abstract Machines on YouTube"
                 className="text-muted-foreground hover:text-foreground transition-colors"
               >
-                <Youtube className="size-5" />
+                <Youtube className="size-5" aria-hidden="true" />
               </Link>
             </div>
           </div>
@@ -118,9 +126,14 @@ export default function FooterSection() {
               <InputGroup>
                 <InputGroupInput type="email" placeholder="Your email" />
                 <InputGroupAddon align="inline-end">
-                  <InputGroupButton variant="secondary">
-                    <span className="hidden sm:inline">Subscribe</span>
-                    <SendIcon className="inline sm:hidden" />
+                  <InputGroupButton
+                    variant="secondary"
+                    aria-label="Subscribe to newsletter"
+                  >
+                    <span className="hidden sm:inline" aria-hidden="true">
+                      Subscribe
+                    </span>
+                    <SendIcon className="inline sm:hidden" aria-hidden="true" />
                   </InputGroupButton>
                 </InputGroupAddon>
               </InputGroup>
