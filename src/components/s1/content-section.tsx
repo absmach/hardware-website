@@ -36,7 +36,7 @@ export default function S1ContentSection() {
             <div className="relative mb-6 sm:mb-0">
               <div className="bg-linear-to-b aspect-76/59 relative rounded-2xl to-transparent p-px">
                 <img
-                  src={assetPath("/s0.png")}
+                  src={assetPath("/s0.webp")}
                   className="rounded-[15px]"
                   alt="S0 Board"
                   width={1187}
