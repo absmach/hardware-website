@@ -39,6 +39,9 @@ export default function S0ContentSection() {
                   src={assetPath("/s0.png")}
                   className="rounded-[15px]"
                   alt="S0 Board"
+                  width={1187}
+                  height={1200}
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -91,6 +94,9 @@ export default function S0ContentSection() {
                   src={assetPath("/baseboard.png")}
                   className="rounded-[15px]"
                   alt="S0 Baseboard"
+                  width={1187}
+                  height={1200}
+                  loading="lazy"
                 />
               </div>
             </div>

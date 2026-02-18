@@ -39,11 +39,15 @@ export const logo = (
         src={assetPath("/logo-black.svg")}
         className="h-10 w-auto dark:hidden"
         alt="Abstract Machines logo"
+        width={1700}
+        height={1600}
       />
       <img
         src={assetPath("/logo-white.svg")}
         className="h-10 w-auto hidden dark:block"
         alt="Abstract Machines logo"
+        width={1700}
+        height={1600}
       />
       Hardware
     </div>

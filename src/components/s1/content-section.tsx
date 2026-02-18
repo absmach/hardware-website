@@ -39,6 +39,9 @@ export default function S1ContentSection() {
                   src={assetPath("/s0.png")}
                   className="rounded-[15px]"
                   alt="S0 Board"
+                  width={1187}
+                  height={1200}
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -88,6 +91,9 @@ export default function S1ContentSection() {
                   src={assetPath("/beaglev-fire.webp")}
                   className="rounded-[15px]"
                   alt="BeagleV-Fire"
+                  width={500}
+                  height={281}
+                  loading="lazy"
                 />
               </div>
             </div>

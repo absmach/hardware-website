@@ -122,6 +122,10 @@ export const HeroSection = () => {
                   loop
                   muted
                   playsInline
+                  preload="metadata"
+                  poster={assetPath("/s1-poster.jpg")}
+                  width={800}
+                  height={480}
                 >
                   <source src={assetPath("/s1.mp4")} type="video/mp4" />
                   Your browser does not support the video tag.
