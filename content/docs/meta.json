@@ -6,8 +6,8 @@
     "s0-gateway",
     "s1-gateway",
     "base-board",
-    "beaglev-fire-hat",
     "---Resources---",
-    "use-cases"
+    "use-cases",
+    "module-tests"
   ]
 }
