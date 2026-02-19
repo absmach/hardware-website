@@ -117,16 +117,23 @@ export default function ProductsSection() {
                       size="lg"
                       variant="outline"
                       className="w-full gap-2 transition-all group-hover:border-primary/50"
+                      aria-label={`${product.name} documentation`}
                     >
-                      Documentation <MoveRight className="w-4 h-4" />
+                      Documentation{" "}
+                      <MoveRight className="w-4 h-4" aria-hidden="true" />
                     </Button>
                   </Link>
                   <Link
                     href={product.learnMoreLink}
                     className="w-full sm:flex-1"
                   >
-                    <Button size="lg" className="w-full gap-2">
-                      Get Started <MoveRight className="w-4 h-4" />
+                    <Button
+                      size="lg"
+                      className="w-full gap-2"
+                      aria-label={`Get started with ${product.name}`}
+                    >
+                      Get Started{" "}
+                      <MoveRight className="w-4 h-4" aria-hidden="true" />
                     </Button>
                   </Link>
                 </CardFooter>
