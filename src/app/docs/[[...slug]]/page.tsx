@@ -38,6 +38,38 @@ export default async function Page(props: PageProps<"/docs/[[...slug]]">) {
           })}
         />
       </DocsBody>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: "https://hardware.absmach.eu",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Documentation",
+                item: "https://hardware.absmach.eu/docs",
+              },
+              ...page.slugs.map((slug, i) => ({
+                "@type": "ListItem",
+                position: i + 3,
+                name: slug
+                  .split("-")
+                  .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+                  .join(" "),
+                item: `https://hardware.absmach.eu/docs/${page.slugs.slice(0, i + 1).join("/")}`,
+              })),
+            ],
+          }),
+        }}
+      />
     </DocsPage>
   );
 }

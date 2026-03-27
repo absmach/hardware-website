@@ -1,0 +1,16 @@
+# Abstract Machines Hardware
+
+Abstract Machines Hardware builds open-source, modular IoT gateways for smart metering, industrial automation, and edge computing.
+
+## Products
+- /docs/s0-gateway — S0 IoT Gateway (ESP32-C6, Wireless M-Bus, NB-IoT, LTE-M, Zephyr RTOS)
+- /docs/s1-gateway — S1 IoT Gateway (Linux-based, BeagleV-Fire, industrial IoT)
+- /docs/base-board — S0 Base Board (W5500 Ethernet, M-Bus transceiver, SD logging)
+
+## Documentation
+- /docs — Full documentation index
+- /docs/s0-gateway/getting-started — Getting started guide
+- /docs/s0-gateway/architecture — Hardware architecture
+
+## About
+https://absmach.eu

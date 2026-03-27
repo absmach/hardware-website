@@ -57,10 +57,32 @@ export const metadata: Metadata = {
   },
 };
 
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Abstract Machines Hardware",
+  url: "https://hardware.absmach.eu",
+  logo: "https://hardware.absmach.eu/logo.png",
+  description:
+    "Open-source modular IoT gateway hardware for smart metering, industrial automation, and edge computing.",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "141 Quai de Valmy",
+    addressLocality: "Paris",
+    postalCode: "75010",
+    addressCountry: "FR",
+  },
+  sameAs: ["https://github.com/absmach/s0", "https://absmach.eu"],
+};
+
 export default function Layout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={rubik.className} suppressHydrationWarning>
       <body className="flex flex-col min-h-screen">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
         <Provider>{children}</Provider>
       </body>
     </html>

@@ -1,3 +1,5 @@
+import fs from "fs";
+import path from "path";
 import type { MetadataRoute } from "next";
 import { source } from "@/lib/source";
 
@@ -11,9 +13,20 @@ function generateDocsSitemap(): MetadataRoute.Sitemap {
   const sitemap: MetadataRoute.Sitemap = [];
 
   for (const page of pages) {
+    let lastModified = "2026-03-24";
+    try {
+      const absPath = page.absolutePath
+        ? path.resolve(page.absolutePath)
+        : null;
+      if (absPath) {
+        lastModified = fs.statSync(absPath).mtime.toISOString();
+      }
+    } catch {
+      // fall back to static date
+    }
     sitemap.push({
       url: `${baseUrl}${page.url}`,
-      lastModified: new Date().toISOString(),
+      lastModified,
       changeFrequency: "weekly",
       priority: 0.7,
     });
@@ -26,15 +39,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: baseUrl,
-      lastModified: new Date().toISOString(),
-      changeFrequency: "daily",
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/docs`,
-      lastModified: new Date().toISOString(),
+      lastModified: "2026-03-24",
       changeFrequency: "weekly",
-      priority: 0.9,
+      priority: 1,
     },
     ...generateDocsSitemap(),
   ];
