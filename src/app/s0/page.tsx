@@ -1,7 +1,38 @@
+import type { Metadata } from "next";
 import FooterSection from "@/components/footer";
 import S0ContentSection from "@/components/s0/content-section";
 import S0FeaturesSection from "@/components/s0/features-section";
 import S0HeroSection from "@/components/s0/hero-section";
+
+export const metadata: Metadata = {
+  title: "S0 Gateway – Wireless IoT Hardware | Abstract Machines",
+  description:
+    "ESP32-C6 IoT gateway with Wireless M-Bus, NB-IoT, LTE-M, WiFi and BLE. Open-source, Zephyr RTOS, DIN-rail ready. Built by Abstract Machines.",
+  alternates: { canonical: "/s0" },
+  openGraph: {
+    type: "website",
+    title: "S0 Gateway – Wireless IoT Hardware | Abstract Machines",
+    description:
+      "ESP32-C6 IoT gateway with Wireless M-Bus, NB-IoT, LTE-M, WiFi and BLE. Open-source, Zephyr RTOS, DIN-rail ready. Built by Abstract Machines.",
+    url: "https://hardware.absmach.eu/s0",
+    siteName: "Abstract Machines Hardware",
+    images: [
+      {
+        url: "/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "S0 IoT Gateway – Abstract Machines Hardware",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "S0 Gateway – Wireless IoT Hardware | Abstract Machines",
+    description:
+      "ESP32-C6 IoT gateway with Wireless M-Bus, NB-IoT, LTE-M, WiFi and BLE. Open-source, Zephyr RTOS, DIN-rail ready.",
+    images: ["/opengraph-image.png"],
+  },
+};
 
 const s0Schema = {
   "@context": "https://schema.org",
@@ -16,6 +47,11 @@ const s0Schema = {
     "@type": "Offer",
     availability: "https://schema.org/InStock",
     priceCurrency: "EUR",
+    seller: {
+      "@type": "Organization",
+      name: "Abstract Machines",
+      url: "https://absmach.eu",
+    },
   },
 };
 
@@ -24,6 +60,7 @@ export default function S0Page() {
     <>
       <script
         type="application/ld+json"
+        // biome-ignore lint/security/noDangerouslySetInnerHtml: JSON-LD schema markup, not user input
         dangerouslySetInnerHTML={{ __html: JSON.stringify(s0Schema) }}
       />
       <S0HeroSection />

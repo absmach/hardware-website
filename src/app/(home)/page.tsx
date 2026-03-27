@@ -1,5 +1,5 @@
-import { FAQSection } from "@/components/faq-section";
 import FaqSchema from "@/components/faq-schema";
+import { FAQSection } from "@/components/faq-section";
 import FeatureSection from "@/components/feature-section";
 import FooterSection from "@/components/footer";
 import { HeroSection } from "@/components/hero";

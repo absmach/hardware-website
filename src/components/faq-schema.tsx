@@ -14,6 +14,7 @@ export default function FaqSchema() {
   return (
     <script
       type="application/ld+json"
+      // biome-ignore lint/security/noDangerouslySetInnerHtml: JSON-LD schema markup, not user input
       dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
     />
   );

@@ -6,17 +6,29 @@ import type { Metadata } from "next";
 const rubik = Rubik({
   subsets: ["latin"],
   style: "normal",
+  display: "swap",
 });
 
 const baseUrl =
   process.env.NEXT_PUBLIC_BASE_URL || "https://hardware.absmach.eu";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(baseUrl),
+  metadataBase: new URL("https://hardware.absmach.eu"),
+  alternates: { canonical: "/" },
   title: "Abstract Machines Hardware - Modular IoT Gateway Solutions",
   description:
     "Open-source IoT gateway hardware for edge computing. S0 module and Base Board for smart metering, industrial IoT, and edge AI applications.",
   keywords: ["S0", "Base Board", "IoT Gateway", "Hardware", "Open Source"],
+  icons: {
+    icon: [
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
+  manifest: "/manifest.json",
   appleWebApp: {
     title: "Abstract Machines Hardware",
   },
@@ -73,6 +85,13 @@ const schema = {
     addressCountry: "FR",
   },
   sameAs: ["https://github.com/absmach/s0", "https://absmach.eu"],
+  contactPoint: {
+    "@type": "ContactPoint",
+    email: "info@absmach.eu",
+    contactType: "sales",
+    areaServed: "EU",
+    availableLanguage: "English",
+  },
 };
 
 export default function Layout({ children }: LayoutProps<"/">) {
@@ -81,6 +100,7 @@ export default function Layout({ children }: LayoutProps<"/">) {
       <body className="flex flex-col min-h-screen">
         <script
           type="application/ld+json"
+          // biome-ignore lint/security/noDangerouslySetInnerHtml: JSON-LD schema markup, not user input
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
         />
         <Provider>{children}</Provider>
