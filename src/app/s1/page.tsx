@@ -38,6 +38,7 @@ const s1Schema = {
   "@context": "https://schema.org",
   "@type": "Product",
   name: "S1 IoT Gateway",
+  image: "https://hardware.absmach.eu/beaglev-fire.webp",
   description:
     "Linux-based IoT gateway built on BeagleV-Fire RISC-V. Supports Wireless M-Bus, NB-IoT, LTE-M, WiFi, and BLE. Designed for industrial IoT and edge AI workloads.",
   brand: { "@type": "Brand", name: "Abstract Machines" },
@@ -55,6 +56,15 @@ const s1Schema = {
   },
 };
 
+const s1Breadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://hardware.absmach.eu" },
+    { "@type": "ListItem", position: 2, name: "S1 Gateway", item: "https://hardware.absmach.eu/s1" },
+  ],
+};
+
 export default function S1Page() {
   return (
     <>
@@ -62,6 +72,11 @@ export default function S1Page() {
         type="application/ld+json"
         // biome-ignore lint/security/noDangerouslySetInnerHtml: JSON-LD schema markup, not user input
         dangerouslySetInnerHTML={{ __html: JSON.stringify(s1Schema) }}
+      />
+      <script
+        type="application/ld+json"
+        // biome-ignore lint/security/noDangerouslySetInnerHtml: JSON-LD schema markup, not user input
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(s1Breadcrumb) }}
       />
       <S1HeroSection />
       <S1ContentSection />

@@ -38,6 +38,7 @@ const s0Schema = {
   "@context": "https://schema.org",
   "@type": "Product",
   name: "S0 IoT Gateway",
+  image: "https://hardware.absmach.eu/s0.webp",
   description:
     "Modular IoT gateway powered by ESP32-C6 RISC-V. Supports Wireless M-Bus, NB-IoT, LTE-M, WiFi, and BLE. Runs Zephyr RTOS.",
   brand: { "@type": "Brand", name: "Abstract Machines" },
@@ -55,6 +56,15 @@ const s0Schema = {
   },
 };
 
+const s0Breadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://hardware.absmach.eu" },
+    { "@type": "ListItem", position: 2, name: "S0 Gateway", item: "https://hardware.absmach.eu/s0" },
+  ],
+};
+
 export default function S0Page() {
   return (
     <>
@@ -62,6 +72,11 @@ export default function S0Page() {
         type="application/ld+json"
         // biome-ignore lint/security/noDangerouslySetInnerHtml: JSON-LD schema markup, not user input
         dangerouslySetInnerHTML={{ __html: JSON.stringify(s0Schema) }}
+      />
+      <script
+        type="application/ld+json"
+        // biome-ignore lint/security/noDangerouslySetInnerHtml: JSON-LD schema markup, not user input
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(s0Breadcrumb) }}
       />
       <S0HeroSection />
       <S0ContentSection />

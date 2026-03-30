@@ -1,26 +1,11 @@
 "use client";
 
-import dynamic from "next/dynamic";
 import Link from "next/link";
 import ReactDOM from "react-dom";
+import { AnimatedGroup } from "@/components/motion-primitives/animated-group";
+import { TextEffect } from "@/components/motion-primitives/text-effect";
 import { Button } from "@/components/ui/button";
 import { assetPath } from "@/lib/base-path";
-
-const TextEffect = dynamic(
-  () =>
-    import("@/components/motion-primitives/text-effect").then(
-      (m) => m.TextEffect,
-    ),
-  { ssr: false },
-);
-
-const AnimatedGroup = dynamic(
-  () =>
-    import("@/components/motion-primitives/animated-group").then(
-      (m) => m.AnimatedGroup,
-    ),
-  { ssr: false },
-);
 
 const transitionVariants = {
   item: {

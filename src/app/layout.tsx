@@ -94,6 +94,22 @@ const schema = {
   },
 };
 
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Abstract Machines Hardware",
+  url: "https://hardware.absmach.eu",
+  potentialAction: {
+    "@type": "SearchAction",
+    target: {
+      "@type": "EntryPoint",
+      urlTemplate:
+        "https://hardware.absmach.eu/docs?q={search_term_string}",
+    },
+    "query-input": "required name=search_term_string",
+  },
+};
+
 export default function Layout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={rubik.className} suppressHydrationWarning>
@@ -102,6 +118,11 @@ export default function Layout({ children }: LayoutProps<"/">) {
           type="application/ld+json"
           // biome-ignore lint/security/noDangerouslySetInnerHtml: JSON-LD schema markup, not user input
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+        <script
+          type="application/ld+json"
+          // biome-ignore lint/security/noDangerouslySetInnerHtml: JSON-LD schema markup, not user input
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
         <Provider>{children}</Provider>
       </body>

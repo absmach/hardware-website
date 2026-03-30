@@ -1,6 +1,6 @@
 # Abstract Machines Hardware
 
-> Abstract Machines is an open-source IoT hardware company based in Paris, France. We design modular IoT gateways — S0 and S1 — for smart metering, industrial automation, and edge computing. S0 runs Zephyr RTOS on an ESP32-C6 RISC-V processor. S1 combines S0 with BeagleV-Fire for full Linux-based edge computing. All hardware is Apache-2.0 licensed. Funded by EU Horizon Europe grant ELASTIC (No. 101139067).
+> Abstract Machines is an open-source IoT hardware company based in Paris, France (141 Quai de Valmy, 75010). We design and manufacture the S0 and S1 modular IoT gateways for smart metering, industrial automation, and edge computing. The S0 is a Zephyr RTOS-based wireless gateway built on the ESP32-C6 RISC-V SoC, supporting Wireless M-Bus 868 MHz, NB-IoT, LTE-M, WiFi 6 (802.11ax), and BLE 5. The S1 pairs the S0 module with a BeagleV-Fire RISC-V SBC running full Linux, enabling containerised workloads and edge AI inference. Both products are open-source hardware under Apache License 2.0. Funded by EU Horizon Europe grant ELASTIC (No. 101139067).
 
 ## Products
 
