@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import FaqSchema from "@/components/faq-schema";
 import { FAQSection } from "@/components/faq-section";
 import FeatureSection from "@/components/feature-section";
@@ -6,6 +7,10 @@ import { HeroSection } from "@/components/hero";
 import HowItWorksSection from "@/components/how-it-works-section";
 import ProductsSection from "@/components/products-section";
 import { Separator } from "@/components/ui/separator";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 export default function HomePage() {
   return (

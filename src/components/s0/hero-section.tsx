@@ -28,7 +28,6 @@ export default function S0HeroSection() {
                 <span className="text-lg font-bold sm:text-xl">S0 Gateway</span>
               </Link>
 
-              {/* Desktop Navigation */}
               <div className="hidden lg:flex lg:items-center lg:gap-8">
                 {menuItems.map((item) => (
                   <Link

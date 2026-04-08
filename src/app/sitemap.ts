@@ -1,9 +1,8 @@
-import fs from "node:fs";
-import path from "node:path";
+import { execSync } from "node:child_process";
+import { join } from "node:path";
 import type { MetadataRoute } from "next";
+import { SITE_URL } from "@/lib/site";
 import { source } from "@/lib/source";
-
-const baseUrl = "https://hardware.absmach.eu";
 
 export const dynamic = "force-static";
 
@@ -21,21 +20,29 @@ function docsWeight(slugs: string[]): {
   return { priority: 0.5, changeFrequency: "monthly" };
 }
 
-function statMtime(filePath: string | undefined): string {
-  if (!filePath) return "2026-03-24";
+function gitLastModified(filePath: string): string | undefined {
   try {
-    return fs.statSync(path.resolve(filePath)).mtime.toISOString();
+    const iso = execSync(`git log -1 --format=%cI -- "${filePath}"`, {
+      cwd: process.cwd(),
+    })
+      .toString()
+      .trim();
+    return iso || undefined;
   } catch {
-    return "2026-03-24";
+    return undefined;
   }
 }
 
 function generateDocsSitemap(): MetadataRoute.Sitemap {
   return source.getPages().map((page) => {
     const { priority, changeFrequency } = docsWeight(page.slugs);
+    const lastModified =
+      page.data.lastModified ||
+      gitLastModified(join(process.cwd(), "content/docs", page.path));
+
     return {
-      url: `${baseUrl}${page.url}`,
-      lastModified: statMtime(page.absolutePath),
+      url: `${SITE_URL}${page.url}`,
+      ...(lastModified ? { lastModified } : {}),
       changeFrequency,
       priority,
     };
@@ -43,22 +50,32 @@ function generateDocsSitemap(): MetadataRoute.Sitemap {
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const homeLastModified = gitLastModified(
+    join(process.cwd(), "src/app/(home)/page.tsx"),
+  );
+  const s0LastModified = gitLastModified(
+    join(process.cwd(), "src/app/s0/page.tsx"),
+  );
+  const s1LastModified = gitLastModified(
+    join(process.cwd(), "src/app/s1/page.tsx"),
+  );
+
   return [
     {
-      url: baseUrl,
-      lastModified: "2026-03-24",
+      url: SITE_URL,
+      ...(homeLastModified ? { lastModified: homeLastModified } : {}),
       changeFrequency: "weekly",
       priority: 1,
     },
     {
-      url: `${baseUrl}/s0`,
-      lastModified: "2026-03-24",
+      url: `${SITE_URL}/s0`,
+      ...(s0LastModified ? { lastModified: s0LastModified } : {}),
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/s1`,
-      lastModified: "2026-03-24",
+      url: `${SITE_URL}/s1`,
+      ...(s1LastModified ? { lastModified: s1LastModified } : {}),
       changeFrequency: "weekly",
       priority: 0.9,
     },

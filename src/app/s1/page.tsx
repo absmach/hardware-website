@@ -4,17 +4,32 @@ import S1ContentSection from "@/components/s1/content-section";
 import S1FeaturesSection from "@/components/s1/features-section";
 import S1HeroSection from "@/components/s1/hero-section";
 
+const pageTitle = "S1 Gateway – Linux Edge Computing | Abstract Machines";
+const pageDescription =
+  "Linux-based IoT gateway combining S0 with BeagleV-Fire RISC-V. For industrial automation, edge AI, and container workloads. Built by Abstract Machines.";
+const twitterDescription =
+  "Linux-based IoT gateway combining S0 with BeagleV-Fire RISC-V. For industrial automation, edge AI, and container workloads.";
+
 export const metadata: Metadata = {
-  title: "S1 Gateway – Linux Edge Computing | Abstract Machines",
-  description:
-    "Linux-based IoT gateway combining S0 with BeagleV-Fire RISC-V. For industrial automation, edge AI, and container workloads. Built by Abstract Machines.",
+  title: pageTitle,
+  description: pageDescription,
   alternates: { canonical: "/s1" },
+  keywords: [
+    "S1 Gateway",
+    "BeagleV-Fire",
+    "RISC-V",
+    "Linux IoT Gateway",
+    "Edge AI",
+    "Industrial Automation",
+    "Container Workloads",
+    "Edge Computing",
+    "Open Source Hardware",
+  ],
   openGraph: {
     type: "website",
-    title: "S1 Gateway – Linux Edge Computing | Abstract Machines",
-    description:
-      "Linux-based IoT gateway combining S0 with BeagleV-Fire RISC-V. For industrial automation, edge AI, and container workloads. Built by Abstract Machines.",
-    url: "https://hardware.absmach.eu/s1",
+    title: pageTitle,
+    description: pageDescription,
+    url: "https://www.hardware.absmach.eu/s1",
     siteName: "Abstract Machines Hardware",
     images: [
       {
@@ -27,9 +42,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "S1 Gateway – Linux Edge Computing | Abstract Machines",
-    description:
-      "Linux-based IoT gateway combining S0 with BeagleV-Fire RISC-V. For industrial automation, edge AI, and container workloads.",
+    title: pageTitle,
+    description: twitterDescription,
     images: ["/opengraph-image.png"],
   },
 };
@@ -38,12 +52,12 @@ const s1Schema = {
   "@context": "https://schema.org",
   "@type": "Product",
   name: "S1 IoT Gateway",
-  image: "https://hardware.absmach.eu/beaglev-fire.webp",
+  image: "https://www.hardware.absmach.eu/beaglev-fire.webp",
   description:
     "Linux-based IoT gateway built on BeagleV-Fire RISC-V. Supports Wireless M-Bus, NB-IoT, LTE-M, WiFi, and BLE. Designed for industrial IoT and edge AI workloads.",
   brand: { "@type": "Brand", name: "Abstract Machines" },
   category: "IoT Gateway Hardware",
-  url: "https://hardware.absmach.eu/s1",
+  url: "https://www.hardware.absmach.eu/s1",
   offers: {
     "@type": "Offer",
     availability: "https://schema.org/InStock",
@@ -60,8 +74,18 @@ const s1Breadcrumb = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://hardware.absmach.eu" },
-    { "@type": "ListItem", position: 2, name: "S1 Gateway", item: "https://hardware.absmach.eu/s1" },
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://www.hardware.absmach.eu",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "S1 Gateway",
+      item: "https://www.hardware.absmach.eu/s1",
+    },
   ],
 };
 

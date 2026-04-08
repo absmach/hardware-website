@@ -26,20 +26,23 @@ Modular expansion board with W5500 Ethernet, TSS721A M-Bus transceiver, SD card 
 
 ### Prerequisites
 
-- [Bun](https://bun.com/) (recommended) or Node.js
+- Node.js 20
+- Corepack enabled (`corepack enable`)
 
 ### Installation
 
 ```bash
-bun install
+pnpm install --frozen-lockfile
 ```
+
+`pnpm` is pinned via `package.json` to `10.33.0`, so Corepack will provision the expected version automatically.
 
 ### Development
 
 Run the development server:
 
 ```bash
-bun run dev
+pnpm dev
 ```
 
 Open <http://localhost:3000> with your browser to see the result.
@@ -49,7 +52,7 @@ Open <http://localhost:3000> with your browser to see the result.
 Build the static site:
 
 ```bash
-bun run build
+pnpm build
 ```
 
 The output will be generated in the `out` directory.
@@ -57,19 +60,19 @@ The output will be generated in the `out` directory.
 ### Preview Production Build
 
 ```bash
-bun run start
+pnpm start
 ```
 
 ### Linting
 
 ```bash
-bun run lint
-bun run lint:fix  # Auto-fix issues
+pnpm lint
+pnpm lint:fix  # Auto-fix issues
 ```
 
 ## Deployment
 
-The site is configured for static export and can be deployed to GitHub Pages (via [`.github/workflows/cd.yml`](.github/workflows/cd.yml)) or any other static hosting provider.
+The site is configured for static export and can be deployed to GitHub Pages (via [`.github/workflows/cd.yaml`](.github/workflows/cd.yaml)) or any other static hosting provider.
 
 ## License
 

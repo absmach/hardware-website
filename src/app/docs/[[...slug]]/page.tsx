@@ -1,3 +1,5 @@
+import { execSync } from "node:child_process";
+import { join } from "node:path";
 import {
   DocsBody,
   DocsDescription,
@@ -7,9 +9,30 @@ import {
 import { createRelativeLink } from "fumadocs-ui/mdx";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { DocAttribution } from "@/components/doc-attribution";
 import { LLMCopyButton, ViewOptions } from "@/components/page-actions";
+import { resolveAuthors } from "@/lib/authors";
+import { SITE_URL } from "@/lib/site";
 import { getPageImage, source } from "@/lib/source";
 import { getMDXComponents } from "@/mdx-components";
+
+function resolvePageLastModified(
+  frontmatterDate: string | undefined,
+  filePath: string,
+): string | undefined {
+  if (frontmatterDate) return frontmatterDate;
+
+  try {
+    const date = execSync(`git log -1 --format=%cI -- "${filePath}"`, {
+      cwd: process.cwd(),
+    })
+      .toString()
+      .trim();
+    return date || undefined;
+  } catch {
+    return undefined;
+  }
+}
 
 export default async function Page(props: PageProps<"/docs/[[...slug]]">) {
   const params = await props.params;
@@ -17,6 +40,11 @@ export default async function Page(props: PageProps<"/docs/[[...slug]]">) {
   if (!page) notFound();
 
   const MDX = page.data.body;
+  const authors = resolveAuthors(page.data.authors);
+  const lastModified = resolvePageLastModified(
+    page.data.lastModified,
+    join(process.cwd(), "content/docs", page.path),
+  );
 
   return (
     <DocsPage toc={page.data.toc} full={page.data.full}>
@@ -30,10 +58,11 @@ export default async function Page(props: PageProps<"/docs/[[...slug]]">) {
         />
       </div>
 
+      <DocAttribution authors={authors} lastModified={lastModified} />
+
       <DocsBody>
         <MDX
           components={getMDXComponents({
-            // this allows you to link to other pages with relative file paths
             a: createRelativeLink(source, page),
           })}
         />
@@ -50,13 +79,13 @@ export default async function Page(props: PageProps<"/docs/[[...slug]]">) {
                 "@type": "ListItem",
                 position: 1,
                 name: "Home",
-                item: "https://hardware.absmach.eu",
+                item: SITE_URL,
               },
               {
                 "@type": "ListItem",
                 position: 2,
                 name: "Documentation",
-                item: "https://hardware.absmach.eu/docs",
+                item: `${SITE_URL}/docs`,
               },
               ...page.slugs.map((slug, i) => ({
                 "@type": "ListItem",
@@ -65,7 +94,7 @@ export default async function Page(props: PageProps<"/docs/[[...slug]]">) {
                   .split("-")
                   .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
                   .join(" "),
-                item: `https://hardware.absmach.eu/docs/${page.slugs.slice(0, i + 1).join("/")}`,
+                item: `${SITE_URL}/docs/${page.slugs.slice(0, i + 1).join("/")}`,
               })),
             ],
           }),
@@ -89,8 +118,9 @@ export async function generateMetadata(props: {
   return {
     title: page.data.title,
     description: page.data.description,
-    alternates: { canonical: page.url },
+    alternates: { canonical: `${SITE_URL}${page.url}` },
     openGraph: {
+      url: `${SITE_URL}${page.url}`,
       images: getPageImage(page).url,
     },
   };

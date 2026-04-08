@@ -4,19 +4,19 @@
 
 ## Products
 
-- [S0 IoT Gateway](https://hardware.absmach.eu/s0) — Wireless IoT gateway powered by ESP32-C6 RISC-V. Supports Wireless M-Bus (868 MHz), NB-IoT, LTE-M, WiFi 6, and BLE 5. Runs Zephyr RTOS. Low-power, DIN-rail ready.
-- [S1 IoT Gateway](https://hardware.absmach.eu/s1) — Linux-based industrial IoT gateway combining the S0 module with BeagleV-Fire RISC-V. Supports containerised workloads, edge AI inference, and protocol translation.
-- [S0 Base Board](https://hardware.absmach.eu/docs/base-board) — Expansion board with W5500 Ethernet, TSS721A M-Bus transceiver, SD card logging, and robust power management.
+- [S0 IoT Gateway](https://www.hardware.absmach.eu/s0) — Wireless IoT gateway powered by ESP32-C6 RISC-V. Supports Wireless M-Bus (868 MHz), NB-IoT, LTE-M, WiFi 6, and BLE 5. Runs Zephyr RTOS. Low-power, DIN-rail ready.
+- [S1 IoT Gateway](https://www.hardware.absmach.eu/s1) — Linux-based industrial IoT gateway combining the S0 module with BeagleV-Fire RISC-V. Supports containerised workloads, edge AI inference, and protocol translation.
+- [S0 Base Board](https://www.hardware.absmach.eu/docs/base-board) — Expansion board with W5500 Ethernet, TSS721A M-Bus transceiver, SD card logging, and robust power management.
 
 ## Documentation
 
-- [Documentation Index](https://hardware.absmach.eu/docs) — Full hardware and software documentation
-- [S0 Gateway Docs](https://hardware.absmach.eu/docs/s0-gateway) — Architecture, pinouts, getting started
-- [S0 Getting Started](https://hardware.absmach.eu/docs/s0-gateway/getting-started) — Setup and first flash
-- [S0 Architecture](https://hardware.absmach.eu/docs/s0-gateway/architecture) — Hardware architecture overview
-- [S0 Software](https://hardware.absmach.eu/docs/s0-gateway/software) — MQTT, CoAP, HTTP, WebSockets, WiFi
-- [S1 Gateway Docs](https://hardware.absmach.eu/docs/s1-gateway) — Linux-based gateway documentation
-- [Base Board Docs](https://hardware.absmach.eu/docs/base-board) — Schematics, pinouts, expansion
+- [Documentation Index](https://www.hardware.absmach.eu/docs) — Full hardware and software documentation
+- [S0 Gateway Docs](https://www.hardware.absmach.eu/docs/s0-gateway) — Architecture, pinouts, getting started
+- [S0 Getting Started](https://www.hardware.absmach.eu/docs/s0-gateway/getting-started) — Setup and first flash
+- [S0 Architecture](https://www.hardware.absmach.eu/docs/s0-gateway/architecture) — Hardware architecture overview
+- [S0 Software](https://www.hardware.absmach.eu/docs/s0-gateway/software) — MQTT, CoAP, HTTP, WebSockets, WiFi
+- [S1 Gateway Docs](https://www.hardware.absmach.eu/docs/s1-gateway) — Linux-based gateway documentation
+- [Base Board Docs](https://www.hardware.absmach.eu/docs/base-board) — Schematics, pinouts, expansion
 
 ## Key Technical Facts
 
@@ -32,7 +32,7 @@
 ## Company
 
 - Website: https://absmach.eu
-- Hardware site: https://hardware.absmach.eu
+- Hardware site: https://www.hardware.absmach.eu
 - GitHub: https://github.com/absmach/s0
 - Contact: info@absmach.eu
 - Address: 141 Quai de Valmy, 75010 Paris, France
