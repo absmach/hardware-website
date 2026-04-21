@@ -86,9 +86,15 @@ export const metadata: Metadata = {
 const schema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "Abstract Machines Hardware",
+  "@id": `${SITE_URL}/#organization`,
+  name: "Abstract Machines",
   url: SITE_URL,
-  logo: `${SITE_URL}/logo.png`,
+  logo: {
+    "@type": "ImageObject",
+    url: `${SITE_URL}/opengraph-image.png`,
+    width: 1200,
+    height: 630,
+  },
   description:
     "Open-source modular IoT gateway hardware for smart metering, industrial automation, and edge computing.",
   address: {
@@ -98,11 +104,17 @@ const schema = {
     postalCode: "75010",
     addressCountry: "FR",
   },
-  sameAs: ["https://github.com/absmach/s0", "https://absmach.eu"],
+  sameAs: [
+    "https://github.com/absmach/s0",
+    "https://absmach.eu",
+    "https://twitter.com/absmach",
+    "https://www.linkedin.com/company/abstract-machines",
+    "https://www.youtube.com/@absmach",
+  ],
   contactPoint: {
     "@type": "ContactPoint",
     email: "info@absmach.eu",
-    contactType: "sales",
+    contactType: "technical support",
     areaServed: "EU",
     availableLanguage: "English",
   },
@@ -111,16 +123,10 @@ const schema = {
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
+  "@id": `${SITE_URL}/#website`,
   name: "Abstract Machines Hardware",
   url: SITE_URL,
-  potentialAction: {
-    "@type": "SearchAction",
-    target: {
-      "@type": "EntryPoint",
-      urlTemplate: `${SITE_URL}/docs?q={search_term_string}`,
-    },
-    "query-input": "required name=search_term_string",
-  },
+  publisher: { "@id": `${SITE_URL}/#organization` },
 };
 
 export default function Layout({ children }: LayoutProps<"/">) {

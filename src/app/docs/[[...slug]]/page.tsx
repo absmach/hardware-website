@@ -73,6 +73,23 @@ export default async function Page(props: PageProps<"/docs/[[...slug]]">) {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
+            "@type": "TechArticle",
+            "@id": `${SITE_URL}${page.url}/#article`,
+            headline: page.data.title,
+            description: page.data.description,
+            url: `${SITE_URL}${page.url}`,
+            inLanguage: "en",
+            isPartOf: { "@id": `${SITE_URL}/#website` },
+            publisher: { "@id": `${SITE_URL}/#organization` },
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        // biome-ignore lint/security/noDangerouslySetInnerHtml: JSON-LD schema markup, not user input
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             itemListElement: [
               {
@@ -115,13 +132,33 @@ export async function generateMetadata(props: {
   const page = source.getPage(params.slug);
   if (!page) notFound();
 
+  const pageUrl = `${SITE_URL}${page.url}`;
+  const ogImage = getPageImage(page).url;
+
   return {
     title: page.data.title,
     description: page.data.description,
-    alternates: { canonical: `${SITE_URL}${page.url}` },
+    alternates: { canonical: pageUrl },
     openGraph: {
-      url: `${SITE_URL}${page.url}`,
-      images: getPageImage(page).url,
+      type: "article",
+      url: pageUrl,
+      title: page.data.title,
+      description: page.data.description,
+      siteName: "Abstract Machines Hardware",
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: page.data.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: page.data.title,
+      description: page.data.description,
+      images: [ogImage],
     },
   };
 }

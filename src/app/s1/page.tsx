@@ -3,6 +3,7 @@ import FooterSection from "@/components/footer";
 import S1ContentSection from "@/components/s1/content-section";
 import S1FeaturesSection from "@/components/s1/features-section";
 import S1HeroSection from "@/components/s1/hero-section";
+import { SITE_URL } from "@/lib/site";
 
 const pageTitle = "S1 Gateway – Linux Edge Computing | Abstract Machines";
 const pageDescription =
@@ -29,7 +30,7 @@ export const metadata: Metadata = {
     type: "website",
     title: pageTitle,
     description: pageDescription,
-    url: "https://www.hardware.absmach.eu/s1",
+    url: `${SITE_URL}/s1`,
     siteName: "Abstract Machines Hardware",
     images: [
       {
@@ -51,23 +52,19 @@ export const metadata: Metadata = {
 const s1Schema = {
   "@context": "https://schema.org",
   "@type": "Product",
+  "@id": `${SITE_URL}/s1/#product`,
   name: "S1 IoT Gateway",
-  image: "https://www.hardware.absmach.eu/beaglev-fire.webp",
+  image: `${SITE_URL}/beaglev-fire.webp`,
   description:
     "Linux-based IoT gateway built on BeagleV-Fire RISC-V. Supports Wireless M-Bus, NB-IoT, LTE-M, WiFi, and BLE. Designed for industrial IoT and edge AI workloads.",
-  brand: { "@type": "Brand", name: "Abstract Machines" },
-  category: "IoT Gateway Hardware",
-  url: "https://www.hardware.absmach.eu/s1",
-  offers: {
-    "@type": "Offer",
-    availability: "https://schema.org/InStock",
-    priceCurrency: "EUR",
-    seller: {
-      "@type": "Organization",
-      name: "Abstract Machines",
-      url: "https://absmach.eu",
-    },
+  brand: {
+    "@type": "Brand",
+    name: "Abstract Machines",
+    url: "https://absmach.eu",
   },
+  category: "IoT Gateway Hardware",
+  url: `${SITE_URL}/s1`,
+  manufacturer: { "@id": `${SITE_URL}/#organization` },
 };
 
 const s1Breadcrumb = {
@@ -78,13 +75,13 @@ const s1Breadcrumb = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://www.hardware.absmach.eu",
+      item: SITE_URL,
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "S1 Gateway",
-      item: "https://www.hardware.absmach.eu/s1",
+      item: `${SITE_URL}/s1`,
     },
   ],
 };

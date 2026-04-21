@@ -7,9 +7,14 @@ import { HeroSection } from "@/components/hero";
 import HowItWorksSection from "@/components/how-it-works-section";
 import ProductsSection from "@/components/products-section";
 import { Separator } from "@/components/ui/separator";
+import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    url: SITE_URL,
+  },
 };
 
 export default function HomePage() {

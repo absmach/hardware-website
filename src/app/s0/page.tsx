@@ -3,6 +3,7 @@ import FooterSection from "@/components/footer";
 import S0ContentSection from "@/components/s0/content-section";
 import S0FeaturesSection from "@/components/s0/features-section";
 import S0HeroSection from "@/components/s0/hero-section";
+import { SITE_URL } from "@/lib/site";
 
 const pageTitle = "S0 Gateway – Wireless IoT Hardware | Abstract Machines";
 const pageDescription =
@@ -30,7 +31,7 @@ export const metadata: Metadata = {
     type: "website",
     title: pageTitle,
     description: pageDescription,
-    url: "https://www.hardware.absmach.eu/s0",
+    url: `${SITE_URL}/s0`,
     siteName: "Abstract Machines Hardware",
     images: [
       {
@@ -52,23 +53,19 @@ export const metadata: Metadata = {
 const s0Schema = {
   "@context": "https://schema.org",
   "@type": "Product",
+  "@id": `${SITE_URL}/s0/#product`,
   name: "S0 IoT Gateway",
-  image: "https://www.hardware.absmach.eu/s0.webp",
+  image: `${SITE_URL}/s0.webp`,
   description:
     "Modular IoT gateway powered by ESP32-C6 RISC-V. Supports Wireless M-Bus, NB-IoT, LTE-M, WiFi, and BLE. Runs Zephyr RTOS.",
-  brand: { "@type": "Brand", name: "Abstract Machines" },
-  category: "IoT Gateway Hardware",
-  url: "https://www.hardware.absmach.eu/s0",
-  offers: {
-    "@type": "Offer",
-    availability: "https://schema.org/InStock",
-    priceCurrency: "EUR",
-    seller: {
-      "@type": "Organization",
-      name: "Abstract Machines",
-      url: "https://absmach.eu",
-    },
+  brand: {
+    "@type": "Brand",
+    name: "Abstract Machines",
+    url: "https://absmach.eu",
   },
+  category: "IoT Gateway Hardware",
+  url: `${SITE_URL}/s0`,
+  manufacturer: { "@id": `${SITE_URL}/#organization` },
 };
 
 const s0Breadcrumb = {
@@ -79,13 +76,13 @@ const s0Breadcrumb = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://www.hardware.absmach.eu",
+      item: SITE_URL,
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "S0 Gateway",
-      item: "https://www.hardware.absmach.eu/s0",
+      item: `${SITE_URL}/s0`,
     },
   ],
 };
