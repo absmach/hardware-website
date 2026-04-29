@@ -107,7 +107,7 @@ export default function S1HeroSection() {
                   <Button size="lg" asChild>
                     <Link href="/docs/s1-gateway">
                       <Rocket className="relative size-4" />
-                      <span className="text-nowrap">Learn More</span>
+                      <span className="text-nowrap">Get Started</span>
                     </Link>
                   </Button>
                 </div>
