@@ -1,17 +1,17 @@
 ---
-title: S0 Base Board
-description: Modular expansion board for S0 IoT Gateway
+title: A0 Base Board
+description: Modular expansion board for A0 IoT Gateway
 ---
 
-# S0 Base Board
+# A0 Base Board
 
-![S0 Baseboard](../images/baseboard-front.png)
+![A0 Baseboard](../images/baseboard-front.png)
 
-The **S0 Base Board** is a modular expansion board designed to power and extend the functionality of the S0 compute module. It integrates critical components for industrial IoT and smart metering applications, making it ideal for professional deployments.
+The **A0 Base Board** is a modular expansion board designed to power and extend the functionality of the A0 compute module. It integrates critical components for industrial IoT and smart metering applications, making it ideal for professional deployments.
 
 ## Overview
 
-The Base Board transforms the S0 module into a complete gateway solution. The S0 board acts as a cape to the Baseboard, connected via 2x23 male headers on the S0 fitting onto the female headers of the Baseboard. The Baseboard supplies both 5V and 3.3V to the S0 board.
+The Base Board transforms the A0 module into a complete gateway solution. The A0 board acts as a cape to the Baseboard, connected via 2x23 male headers on the A0 fitting onto the female headers of the Baseboard. The Baseboard supplies both 5V and 3.3V to the A0 board.
 
 ## Features
 
@@ -19,10 +19,10 @@ The Base Board transforms the S0 module into a complete gateway solution. The S0
 - **TSS721A transceiver** for M-Bus communication
 - Wired M-Bus connection via Screw Terminal (`J1`)
 - SD Card slot for data logging
-- Dual 2×23-pin vertical pin sockets (`J5`, `J6`) for connecting the S0 board
+- Dual 2×23-pin vertical pin sockets (`J5`, `J6`) for connecting the A0 board
 - 24V maximum input via Screw Terminal (`J2`)
 - Battery input and onboard charging circuit via JST connector (`J3`)
-- SPI and UART routed through `J5`/`J6` to communicate with the S0 board
+- SPI and UART routed through `J5`/`J6` to communicate with the A0 board
 - Protection components: diodes, inductors, capacitors for power and signal integrity
 - Modular and expandable design with solder jumpers for configuration
 
@@ -32,8 +32,8 @@ The Base Board transforms the S0 module into a complete gateway solution. The S0
 | --------- | -------------------------------- | ----------------------------- |
 | `J2`      | JST Connector                    | 24V DC Power Input            |
 | `J3`      | JST Connector                    | Battery Input and Charging    |
-| `J5`      | 2×23 Pin Female Header (2.54 mm) | Main S0 interface (SPI, UART) |
-| `J6`      | 2×23 Pin Female Header (2.54 mm) | Secondary interface to S0     |
+| `J5`      | 2×23 Pin Female Header (2.54 mm) | Main A0 interface (SPI, UART) |
+| `J6`      | 2×23 Pin Female Header (2.54 mm) | Secondary interface to A0     |
 | `JP2`     | Solder Jumper                    | Config option for W5500       |
 | `JP3`     | Solder Jumper                    | Config option for W5500       |
 
@@ -73,20 +73,20 @@ The Baseboard is equipped with a MicroSD card slot for storing M-Bus data locall
 - **Primary Power Input**: 24V via `J2`
 - **Battery Backup**: Via `J3` with charger IC circuit
 - **Protection**: Diodes for reverse polarity, inductors for EMI
-- **Power Output**: Supplies the connected S0 board through headers
+- **Power Output**: Supplies the connected A0 board through headers
 
 ## Communication Interfaces
 
 ### W5500 Ethernet Controller
 
 - Provides wired network connectivity
-- Communicates with the S0 via **SPI**
+- Communicates with the A0 via **SPI**
 - Auto-negotiation for 10/100 Mbps speeds
 
 ### TSS721A M-Bus Transceiver
 
 - M-Bus driver for utility metering
-- Communicates with the S0 via **UART**
+- Communicates with the A0 via **UART**
 - Compatible with standard M-Bus devices
 - Screw terminal wiring
 
@@ -99,13 +99,13 @@ The Baseboard is equipped with a MicroSD card slot for storing M-Bus data locall
 
 ## Architecture
 
-The **S0 BaseBoard** serves as a **cape** that powers and extends the S0 module:
+The **A0 BaseBoard** serves as a **cape** that powers and extends the A0 module:
 
 | Interface | Direction      | Connected To  |
 | --------- | -------------- | ------------- |
-| SPI       | S0 ↔ W5500     | Network Comm  |
-| UART      | S0 ↔ TSS721A   | M-Bus Comm    |
-| Power     | BaseBoard → S0 | 5V or Battery |
+| SPI       | A0 ↔ W5500     | Network Comm  |
+| UART      | A0 ↔ TSS721A   | M-Bus Comm    |
+| Power     | BaseBoard → A0 | 5V or Battery |
 
 ## PCB Layout
 

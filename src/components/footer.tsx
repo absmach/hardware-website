@@ -31,13 +31,13 @@ export default function FooterSection() {
           <div className="space-y-4 sm:col-span-2 lg:col-span-1">
             <Logo />
             <p className="text-muted-foreground text-sm">
-              Abstract Machines, creators of S0 and S1, builds secure,
+              Abstract Machines, creators of A0 and A1, builds secure,
               open-source IoT gateway hardware for smart metering, industrial
               automation, and edge computing.
             </p>
             <div className="flex space-x-4">
               <Link
-                href="https://github.com/absmach/s0"
+                href="https://github.com/absmach/a0"
                 target="_blank"
                 rel="noreferrer noopener"
                 aria-label="Abstract Machines on GitHub"
@@ -86,7 +86,7 @@ export default function FooterSection() {
                 </Link>
               </li>
               <li>
-                <Link href="https://github.com/absmach/s0" target="_blank">
+                <Link href="https://github.com/absmach/a0" target="_blank">
                   GitHub Repository
                 </Link>
               </li>
@@ -156,7 +156,7 @@ export default function FooterSection() {
             <span className="mx-2">|</span>
             Licensed under{" "}
             <Link
-              href="https://github.com/absmach/s0/blob/main/LICENSE"
+              href="https://github.com/absmach/a0/blob/main/LICENSE"
               target="_blank"
               className="hover:underline"
             >

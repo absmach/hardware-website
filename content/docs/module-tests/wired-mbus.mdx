@@ -9,9 +9,9 @@ description: TSS721ADR Wired M-Bus module documentation and test procedure
 
 The **TSS721ADR** is a **Wired M-Bus (Meter-Bus) transceiver** designed for reliable communication with **wired M-Bus compliant utility meters**, such as **water, heat, gas, and electricity meters**.
 
-On the **S0 Baseboard**, the TSS721ADR enables **direct physical connection** to wired M-Bus meters and acts as the **physical layer interface** between the meters and the S0 board.
+On the **A0 Baseboard**, the TSS721ADR enables **direct physical connection** to wired M-Bus meters and acts as the **physical layer interface** between the meters and the A0 board.
 
-This module allows the S0 board to collect meter data from the Baseboard and forward it to Magistrala via protocols like MQTT, CoAP, HTTP, and others.
+This module allows the A0 board to collect meter data from the Baseboard and forward it to Magistrala via protocols like MQTT, CoAP, HTTP, and others.
 
 ## What is Wired M-Bus?
 
@@ -29,7 +29,7 @@ Wired M-Bus is commonly used in:
 - District heating systems
 - Utility metering cabinets
 
-## Role of the TSS721ADR on the S0 Board
+## Role of the TSS721ADR on the A0 Board
 
 The TSS721ADR performs the following functions:
 
@@ -38,7 +38,7 @@ The TSS721ADR performs the following functions:
 - Protects the MCU from direct exposure to the M-Bus line
 - Enables **half-duplex communication** over the M-Bus
 
-S0 communicates with the TSS721ADR using the **UART interface**, while the TSS721ADR interfaces with the **M-Bus lines (MBUS+ / MBUS−)**.
+A0 communicates with the TSS721ADR using the **UART interface**, while the TSS721ADR interfaces with the **M-Bus lines (MBUS+ / MBUS−)**.
 
 ## Key Features
 
@@ -72,10 +72,10 @@ S0 communicates with the TSS721ADR using the **UART interface**, while the TSS72
 
 Before testing, ensure you have:
 
-- S0 Baseboard powered
-- S0, or a microcontroller of your choice powered and programmed
+- A0 Baseboard powered
+- A0, or a microcontroller of your choice powered and programmed
 - A **wired M-Bus compatible meter** or a (12–42)V DC power supply connected at the MBUS lines with proper M-Bus wiring (polarity observed)
-- Serial logging enabled on the S0 or microcontroller of your choice
+- Serial logging enabled on the A0 or microcontroller of your choice
 - Correct UART configuration (typically 2400 or 9600 baud)
 
 ### Electrical Verification

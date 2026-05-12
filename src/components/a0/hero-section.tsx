@@ -8,10 +8,10 @@ import { Button } from "@/components/ui/button";
 const menuItems = [
   { name: "About", href: "#about" },
   { name: "Features", href: "#features" },
-  { name: "Documentation", href: "/docs/s0-gateway" },
+  { name: "Documentation", href: "/docs/a0-gateway" },
 ];
 
-export default function S0HeroSection() {
+export default function A0HeroSection() {
   const [menuOpen, setMenuOpen] = React.useState(false);
 
   return (
@@ -25,7 +25,7 @@ export default function S0HeroSection() {
                 aria-label="home"
                 className="flex items-center space-x-2"
               >
-                <span className="text-lg font-bold sm:text-xl">S0 Gateway</span>
+                <span className="text-lg font-bold sm:text-xl">A0 Gateway</span>
               </Link>
 
               {/* Desktop Navigation */}
@@ -81,7 +81,7 @@ export default function S0HeroSection() {
             <div className="mx-auto max-w-7xl px-4 sm:px-6">
               <div className="text-center sm:mx-auto sm:w-10/12 lg:mr-auto lg:mt-0 lg:w-4/5">
                 <Link
-                  href="/docs/s0-gateway"
+                  href="/docs/a0-gateway"
                   className="rounded-(--radius) mx-auto flex w-fit items-center gap-2 border p-1 pr-3"
                 >
                   <span className="bg-muted rounded-[calc(var(--radius)-0.25rem)] px-2 py-1 text-xs">
@@ -94,11 +94,11 @@ export default function S0HeroSection() {
                 </Link>
 
                 <h1 className="mt-8 text-2xl font-semibold sm:text-4xl md:text-5xl xl:[line-height:1.125]">
-                  S0 – Zephyr-based Gateway <br className="hidden sm:block" />{" "}
+                  A0 – Zephyr-based Gateway <br className="hidden sm:block" />{" "}
                   for Wireless IoT
                 </h1>
                 <p className="mx-auto mt-6 max-w-2xl text-wrap text-base sm:text-lg sm:mt-8">
-                  S0 combines the S0 Board with the Baseboard into a low-power,
+                  A0 combines the A0 Board with the Baseboard into a low-power,
                   Zephyr RTOS gateway. Built on ESP32-C6 RISC-V, it delivers
                   multi-protocol wireless connectivity for smart metering,
                   industrial automation, and constrained edge deployments.
@@ -106,7 +106,7 @@ export default function S0HeroSection() {
 
                 <div className="mt-8">
                   <Button size="lg" asChild>
-                    <Link href="/docs/s0-gateway/getting-started">
+                    <Link href="/docs/a0-gateway/getting-started">
                       <Rocket className="relative size-4" />
                       <span className="text-nowrap">Start Building</span>
                     </Link>

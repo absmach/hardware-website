@@ -1,11 +1,11 @@
 ---
 title: Use Cases
-description: Real-world applications and deployments of S0 IoT Gateway
+description: Real-world applications and deployments of A0 IoT Gateway
 ---
 
 # Use Cases
 
-The S0 IoT Gateway is designed for diverse IoT applications across smart metering, industrial automation, agriculture, and edge computing. Here are detailed use cases demonstrating the platform's versatility.
+The A0 IoT Gateway is designed for diverse IoT applications across smart metering, industrial automation, agriculture, and edge computing. Here are detailed use cases demonstrating the platform's versatility.
 
 ## Smart Metering
 
@@ -15,7 +15,7 @@ The S0 IoT Gateway is designed for diverse IoT applications across smart meterin
 
 **Solution**:
 
-- Deploy S0 gateway in each apartment block
+- Deploy A0 gateway in each apartment block
 - DIN-rail mount inside electrical cabinets using Base Board
 - Use Wireless M-Bus (RC-S2LP) to read meters without rewiring
 - Use Wired M-Bus via Base Board for legacy devices
@@ -36,7 +36,7 @@ The S0 IoT Gateway is designed for diverse IoT applications across smart meterin
 
 ```yaml
 Hardware:
-  - S0 Gateway with NB-IoT module
+  - A0 Gateway with NB-IoT module
   - Base Board with M-Bus transceiver
   - External antenna for basement installation
 
@@ -58,7 +58,7 @@ Data Flow: 1. Collect meter readings every 15 minutes
 
 **Solution**:
 
-- Install S0 gateways at strategic points throughout network
+- Install A0 gateways at strategic points throughout network
 - Collect data from wireless M-Bus heat meters
 - Real-time monitoring of network performance
 - Edge processing to detect anomalies
@@ -79,7 +79,7 @@ Data Flow: 1. Collect meter readings every 15 minutes
 
 **Solution**:
 
-- Deploy S0 gateways on critical equipment
+- Deploy A0 gateways on critical equipment
 - Collect high-frequency sensor data:
   - Vibration sensors via I2C
   - Temperature sensors via SPI
@@ -122,7 +122,7 @@ Data Management:
 
 **Solution**:
 
-- S0 gateways at electrical distribution points
+- A0 gateways at electrical distribution points
 - M-Bus energy meters monitoring
 - Real-time power quality analysis
 - Integration with building management system
@@ -143,7 +143,7 @@ Data Management:
 
 **Solution**:
 
-- Deploy S0 in weatherproof enclosures
+- Deploy A0 in weatherproof enclosures
 - Solar panel with battery backup
 - Sensors via I2C/SPI/UART interfaces:
   - Soil moisture sensors
@@ -190,7 +190,7 @@ Operation:
 
 **Solution**:
 
-- S0 gateways at lamp posts and buildings
+- A0 gateways at lamp posts and buildings
 - Multi-sensor integration
 - Edge data validation and filtering
 - Real-time public dashboard
@@ -212,7 +212,7 @@ Operation:
 **Solution**:
 
 - Camera or sensor array connected to BeagleV-Fire
-- S0 provides connectivity and power management
+- A0 provides connectivity and power management
 - TensorFlow Lite inference on Linux
 - Results sent via optimal connectivity
 
@@ -229,7 +229,7 @@ Operation:
 ```yaml
 Architecture:
   - BeagleV-Fire: ML inference (TFLite)
-  - S0: Connectivity + data collection
+  - A0: Connectivity + data collection
 
 Performance:
   - Inference: 50ms typical
@@ -248,7 +248,7 @@ Models:
 
 **Solution**:
 
-- S0 collects data from legacy devices
+- A0 collects data from legacy devices
 - BeagleV-Fire runs translation logic
 - Unified MQTT output to Magistrala
 - Bidirectional control
@@ -268,7 +268,7 @@ Models:
 
 **Solution**:
 
-- S0 as trusted IoT edge gateway
+- A0 as trusted IoT edge gateway
 - Wasm-based serverless execution
 - TEE-agnostic remote attestation
 - Lightweight monitoring mechanisms
@@ -297,7 +297,7 @@ Models:
 
 **Solution**:
 
-- S0 gateways throughout building
+- A0 gateways throughout building
 - M-Bus for utility meters
 - BLE for occupancy sensors
 - WiFi for high-bandwidth devices
@@ -318,7 +318,7 @@ Models:
 
 **Solution**:
 
-- S0 with temperature/humidity sensors
+- A0 with temperature/humidity sensors
 - GPS tracking via SIM7080G
 - Real-time alerts for threshold violations
 - Battery-powered for mobility
