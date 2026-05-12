@@ -1,7 +1,7 @@
-import FooterSection from "@/components/footer";
 import A1ContentSection from "@/components/a1/content-section";
 import A1FeaturesSection from "@/components/a1/features-section";
 import A1HeroSection from "@/components/a1/hero-section";
+import FooterSection from "@/components/footer";
 
 export default function A1Page() {
   return (
