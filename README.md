@@ -1,3 +1,6 @@
+# ⚠️ ARCHIVED / MOVED ⚠️ 
+ All the content from this repo has been moved to the company website.
+
 # Abstract Machines Hardware Website
 
 Official documentation and product showcase for Abstract Machines IoT gateway hardware. Built with [Next.js](https://nextjs.org/) and [Fumadocs](https://www.fumadocs.dev/).
