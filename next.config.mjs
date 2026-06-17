@@ -10,6 +10,7 @@ const basePath = isProd && isGitHubPages ? process.env.PAGES_BASE_PATH : "";
 const config = {
   output: "export",
   reactStrictMode: true,
+  poweredByHeader: false,
   ...(basePath && {
     basePath: basePath,
     assetPrefix: basePath,

@@ -9,7 +9,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
-const faqs = [
+export const faqs = [
   {
     question: "What is the S0 Gateway?",
     answer:
