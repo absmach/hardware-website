@@ -5,9 +5,9 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 const features = [
   {
     icon: Layers,
-    title: "S0 Board + BeagleV-Fire",
+    title: "A0 Board + BeagleV-Fire",
     description:
-      "S1 combines the S0 module with the BeagleV-Fire board, pairing multi-protocol wireless capabilities with powerful Linux compute in a single gateway.",
+      "A1 combines the A0 module with the BeagleV-Fire board, pairing multi-protocol wireless capabilities with powerful Linux compute in a single gateway.",
   },
   {
     icon: Server,
@@ -25,7 +25,7 @@ const features = [
     icon: Wifi,
     title: "Multi-Protocol Wireless",
     description:
-      "Inherits the S0 module's multi-protocol connectivity — Wireless M-Bus, NB-IoT, LTE-M, WiFi, and BLE — for versatile IoT deployments.",
+      "Inherits the A0 module's multi-protocol connectivity — Wireless M-Bus, NB-IoT, LTE-M, WiFi, and BLE — for versatile IoT deployments.",
   },
   {
     icon: Cloud,
@@ -41,16 +41,16 @@ const features = [
   },
 ];
 
-export default function S1FeaturesSection() {
+export default function A1FeaturesSection() {
   return (
     <section id="features" className="py-12 sm:py-20 lg:py-28">
       <div className="@container mx-auto max-w-5xl px-4 sm:px-6">
         <div className="text-center">
           <h2 className="text-balance text-4xl font-semibold lg:text-5xl">
-            S1 Features
+            A1 Features
           </h2>
           <p className="mt-4 text-muted-foreground">
-            S0 Board + BeagleV-Fire: the Linux-based gateway for demanding
+            A0 Board + BeagleV-Fire: the Linux-based gateway for demanding
             industrial and edge computing deployments.
           </p>
         </div>

@@ -48,7 +48,7 @@ const features = [
   },
 ];
 
-export default function S0FeaturesSection() {
+export default function A0FeaturesSection() {
   return (
     <section id="features" className="py-12 sm:py-20 lg:py-28 border-b">
       <div className="@container mx-auto max-w-5xl px-4 sm:px-6">

@@ -15,8 +15,8 @@ export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: "Abstract Machines Hardware - Modular IoT Gateway Solutions",
   description:
-    "Open-source IoT gateway hardware for edge computing. S0 module and Base Board for smart metering, industrial IoT, and edge AI applications.",
-  keywords: ["S0", "Base Board", "IoT Gateway", "Hardware", "Open Source"],
+    "Open-source IoT gateway hardware for edge computing. A0 module and Base Board for smart metering, industrial IoT, and edge AI applications.",
+  keywords: ["A0", "Base Board", "IoT Gateway", "Hardware", "Open Source"],
   appleWebApp: {
     title: "Abstract Machines Hardware",
   },
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     type: "website",
     title: "Abstract Machines Hardware - Modular IoT Gateway Solutions",
     description:
-      "Open-source IoT gateway hardware for edge computing. S0 module and Base Board for smart metering, industrial IoT, and edge AI applications.",
+      "Open-source IoT gateway hardware for edge computing. A0 module and Base Board for smart metering, industrial IoT, and edge AI applications.",
     url: baseUrl,
     siteName: "Abstract Machines Hardware",
     images: [
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Abstract Machines Hardware - Modular IoT Gateway Solutions",
     description:
-      "Open-source IoT gateway hardware for edge computing. S0 module and Base Board for smart metering, industrial IoT, and edge AI applications.",
+      "Open-source IoT gateway hardware for edge computing. A0 module and Base Board for smart metering, industrial IoT, and edge AI applications.",
     images: [
       {
         url: `${baseUrl}/opengraph-image.png`,

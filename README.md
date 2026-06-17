@@ -7,11 +7,11 @@ Official documentation and product showcase for Abstract Machines IoT gateway ha
 
 ## Products
 
-### S0 IoT Gateway
+### A0 IoT Gateway
 
 Swiss knife for wireless IoT. Multi-protocol gateway with ESP32-C6 RISC-V, supporting Wireless M-Bus, NB-IoT, LTE-M, WiFi, and BLE. Runs Zephyr RTOS.
 
-### S0 Base Board
+### A0 Base Board
 
 Modular expansion board with W5500 Ethernet, TSS721A M-Bus transceiver, SD card logging, and robust power management.
 

@@ -8,10 +8,10 @@ import { Button } from "@/components/ui/button";
 const menuItems = [
   { name: "About", href: "#about" },
   { name: "Features", href: "#features" },
-  { name: "Documentation", href: "/docs/s1-gateway" },
+  { name: "Documentation", href: "/docs/a1-gateway" },
 ];
 
-export default function S1HeroSection() {
+export default function A1HeroSection() {
   const [menuOpen, setMenuOpen] = React.useState(false);
 
   return (
@@ -25,7 +25,7 @@ export default function S1HeroSection() {
                 aria-label="home"
                 className="flex items-center space-x-2"
               >
-                <span className="text-lg font-bold sm:text-xl">S1 Gateway</span>
+                <span className="text-lg font-bold sm:text-xl">A1 Gateway</span>
               </Link>
 
               <div className="hidden lg:flex lg:items-center lg:gap-8">
@@ -80,7 +80,7 @@ export default function S1HeroSection() {
             <div className="mx-auto max-w-7xl px-4 sm:px-6">
               <div className="text-center sm:mx-auto sm:w-10/12 lg:mr-auto lg:mt-0 lg:w-4/5">
                 <Link
-                  href="/docs/s1-gateway"
+                  href="/docs/a1-gateway"
                   className="rounded-(--radius) mx-auto flex w-fit items-center gap-2 border p-1 pr-3"
                 >
                   <span className="bg-muted rounded-[calc(var(--radius)-0.25rem)] px-2 py-1 text-xs">
@@ -93,11 +93,11 @@ export default function S1HeroSection() {
                 </Link>
 
                 <h1 className="mt-8 text-2xl font-semibold sm:text-4xl md:text-5xl xl:[line-height:1.125]">
-                  S1 – Linux Gateway <br className="hidden sm:block" /> for
+                  A1 – Linux Gateway <br className="hidden sm:block" /> for
                   Industrial IoT
                 </h1>
                 <p className="mx-auto mt-6 max-w-2xl text-wrap text-base sm:text-lg sm:mt-8">
-                  S1 is a powerful Linux-based IoT gateway built on RISC-V
+                  A1 is a powerful Linux-based IoT gateway built on RISC-V
                   architecture. It offers robust connectivity, advanced
                   processing capabilities, and scalability for industrial IoT
                   applications.
@@ -105,7 +105,7 @@ export default function S1HeroSection() {
 
                 <div className="mt-8">
                   <Button size="lg" asChild>
-                    <Link href="/docs/s1-gateway">
+                    <Link href="/docs/a1-gateway">
                       <Rocket className="relative size-4" />
                       <span className="text-nowrap">Learn More</span>
                     </Link>

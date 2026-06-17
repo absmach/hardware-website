@@ -15,7 +15,7 @@ export default function ProductsSection() {
   const products = [
     {
       icon: Cpu,
-      name: "S0 IoT Gateway",
+      name: "A0 IoT Gateway",
       tagline: "Swiss knife for wireless IoT",
       description:
         "Modular IoT gateway powered by ESP32-C6 RISC-V. Multi-protocol support including Wireless M-Bus, NB-IoT, LTE-M, WiFi, and BLE. Runs Zephyr RTOS.",
@@ -26,25 +26,25 @@ export default function ProductsSection() {
         "WiFi & BLE",
         "Zephyr RTOS",
       ],
-      docsLink: "/docs/s0-gateway",
-      learnMoreLink: "/s0",
+      docsLink: "/docs/a0-gateway",
+      learnMoreLink: "/a0",
     },
     {
       icon: CircuitBoard,
-      name: "S1 IoT Gateway",
+      name: "A1 IoT Gateway",
       tagline: "Linux-powered gateway for industrial IoT",
       description:
-        "S1 combines the S0 module with BeagleV-Fire to deliver a full Linux-based gateway. Ideal for demanding industrial IoT deployments that require advanced processing, rich OS support, and seamless edge-to-cloud integration.",
+        "A1 combines the A0 module with BeagleV-Fire to deliver a full Linux-based gateway. Ideal for demanding industrial IoT deployments that require advanced processing, rich OS support, and seamless edge-to-cloud integration.",
       features: [
-        "S0 Board + BeagleV-Fire",
+        "A0 Board + BeagleV-Fire",
         "Linux-Based OS",
         "RISC-V Architecture",
         "Advanced Edge Computing",
         "Edge-to-Cloud Integration",
         "Industrial-Grade Connectivity",
       ],
-      docsLink: "/docs/s1-gateway",
-      learnMoreLink: "/s1",
+      docsLink: "/docs/a1-gateway",
+      learnMoreLink: "/a1",
     },
   ];
 
@@ -56,9 +56,9 @@ export default function ProductsSection() {
             Modular Hardware for Every Use Case
           </h2>
           <p className="mt-4 text-muted-foreground text-lg">
-            Choose the right gateway for your IoT deployment. S0 is a
-            Zephyr-based gateway built on the S0 Board and Baseboard. S1 is a
-            Linux-based gateway combining the S0 Board with BeagleV-Fire for
+            Choose the right gateway for your IoT deployment. A0 is a
+            Zephyr-based gateway built on the A0 Board and Baseboard. A1 is a
+            Linux-based gateway combining the A0 Board with BeagleV-Fire for
             more demanding industrial workloads.
           </p>
         </div>

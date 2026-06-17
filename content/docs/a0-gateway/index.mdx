@@ -1,21 +1,21 @@
 ---
-title: S0 IoT Gateway
+title: A0 IoT Gateway
 description: Swiss knife for wireless IoT - Modular multi-protocol IoT gateway
 ---
 
-# S0 IoT Gateway
+# A0 IoT Gateway
 
-![S0 IoT Gateway](../images/s0.png)
+![A0 IoT Gateway](../images/a0.png)
 
-The **S0 IoT Gateway** is a robust and modular IoT Gateway for smart metering applications. Built around the **ESP32-C6** microcontroller with a RISC-V core, it runs **Zephyr RTOS** and supports both **Wireless M-Bus (wMBus)** and **wired M-Bus** utility meters, transmitting collected data securely to [Magistrala](https://github.com/absmach/magistrala).
+The **A0 IoT Gateway** is a robust and modular IoT Gateway for smart metering applications. Built around the **ESP32-C6** microcontroller with a RISC-V core, it runs **Zephyr RTOS** and supports both **Wireless M-Bus (wMBus)** and **wired M-Bus** utility meters, transmitting collected data securely to [Magistrala](https://github.com/absmach/magistrala).
 
-> **S0 = S0 Board + Baseboard — Zephyr RTOS**
+> **A0 = A0 Board + Baseboard — Zephyr RTOS**
 >
-> Looking for a Linux-based gateway? See the [S1 Gateway](/docs/s1-gateway), which combines the S0 Board with BeagleV-Fire.
+> Looking for a Linux-based gateway? See the [A1 Gateway](/docs/a1-gateway), which combines the A0 Board with BeagleV-Fire.
 
 ## Overview
 
-S0 collects data from multiple wireless protocols and transmits it securely to the cloud. It integrates with [Magistrala](https://github.com/absmach/magistrala), a modern, scalable, open-source IoT platform.
+A0 collects data from multiple wireless protocols and transmits it securely to the cloud. It integrates with [Magistrala](https://github.com/absmach/magistrala), a modern, scalable, open-source IoT platform.
 
 ## Hardware Architecture
 
@@ -26,7 +26,7 @@ S0 collects data from multiple wireless protocols and transmits it securely to t
 | ESP32-C6          | Main microcontroller (RISC-V, WiFi, BLE)      |
 | RC-S2LP           | Wireless M-Bus 868 MHz transceiver            |
 | SIM7080G          | NB-IoT/LTE-M module                           |
-| Ethernet          | (Optional) local network through S0 Baseboard |
+| Ethernet          | (Optional) local network through A0 Baseboard |
 | USB-C & Terminals | For power and debug                           |
 | GNSS Support      | Optional via SIM7080G for asset tracking      |
 
@@ -39,11 +39,11 @@ The board is compact and optimized for IP-rated DIN-rail enclosures for industri
 
 ### Power Management
 
-The S0 board can be powered in 3 ways:
+The A0 board can be powered in 3 ways:
 
 - **USB-C**: For development and testing
 - **Power JST**: Battery of maximum 7.4V connected via the battery JST connector
-- **Baseboard**: The Baseboard supplies both 5V and 3.3V to the S0 board
+- **Baseboard**: The Baseboard supplies both 5V and 3.3V to the A0 board
 
 ## Wireless Communication
 
@@ -55,7 +55,7 @@ The S0 board can be powered in 3 ways:
 
 ## Firmware and Flashing
 
-The S0 board uses the ESP32-C6 as its main microcontroller and can be programmed using any framework of your choice. Firmware is flashed through the USB-C connector.
+The A0 board uses the ESP32-C6 as its main microcontroller and can be programmed using any framework of your choice. Firmware is flashed through the USB-C connector.
 
 Debug is possible via the USB-C connector or the JTAG pins labelled on the board, enabling both on-site and off-site debugging.
 
@@ -63,7 +63,7 @@ Debug is possible via the USB-C connector or the JTAG pins labelled on the board
 
 ### Zephyr RTOS
 
-S0 runs on Zephyr RTOS, providing:
+A0 runs on Zephyr RTOS, providing:
 
 - Secure and modular firmware stack
 - Built-in protocol support (MQTT, CoAP, WebSockets, HTTP)
@@ -104,7 +104,7 @@ Supported communication protocols:
 
 ### Base Board
 
-The S0 Base Board adds:
+The A0 Base Board adds:
 
 - W5500 Ethernet controller
 - TSS721A M-Bus transceiver
@@ -119,7 +119,7 @@ The S0 Base Board adds:
 
 ### Smart Metering
 
-Deploy S0 for residential and industrial utility monitoring:
+Deploy A0 for residential and industrial utility monitoring:
 
 - Read wireless and wired M-Bus meters
 - Backhaul via NB-IoT or LTE-M

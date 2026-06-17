@@ -36,7 +36,7 @@ export default function HowItWorksSection() {
                     Connect Hardware
                   </h3>
                   <p className="text-muted-foreground mt-2 text-sm text-balance">
-                    Assemble your S0 module with the Base Board and connect your
+                    Assemble your A0 module with the Base Board and connect your
                     sensors, meters, or industrial devices.
                   </p>
                 </div>
@@ -106,7 +106,7 @@ export default function HowItWorksSection() {
                   <h3 className="mt-1 font-semibold">Connect Hardware</h3>
                 </div>
                 <p className="text-muted-foreground mt-2 text-sm">
-                  Assemble your S0 module with the Base Board and connect your
+                  Assemble your A0 module with the Base Board and connect your
                   sensors, meters, or industrial devices.
                 </p>
               </div>

@@ -43,7 +43,7 @@ const transitionVariants = {
 };
 
 export const HeroSection = () => {
-  ReactDOM.preload(assetPath("/s1-poster.jpg"), { as: "image" });
+  ReactDOM.preload(assetPath("/a1-poster.jpg"), { as: "image" });
   return (
     <main className="overflow-hidden">
       <div
@@ -76,7 +76,7 @@ export const HeroSection = () => {
                 className="mt-6 max-w-2xl text-pretty text-base sm:text-lg md:mt-8"
               >
                 Modular IoT gateway solutions for smart metering, industrial
-                IoT, and edge computing. S0 module and Base Board deliver
+                IoT, and edge computing. A0 module and Base Board deliver
                 multi-protocol connectivity with open-source hardware and
                 professional support.
               </TextEffect>
@@ -102,8 +102,8 @@ export const HeroSection = () => {
                   variant="outline"
                   className="rounded-xl px-5 text-base"
                 >
-                  <Link href="/s0">
-                    <span className="text-nowrap">S0 Gateway</span>
+                  <Link href="/a0">
+                    <span className="text-nowrap">A0 Gateway</span>
                   </Link>
                 </Button>
                 <Button
@@ -113,8 +113,8 @@ export const HeroSection = () => {
                   variant="outline"
                   className="rounded-xl px-5 text-base"
                 >
-                  <Link href="/s1">
-                    <span className="text-nowrap">S1 Gateway</span>
+                  <Link href="/a1">
+                    <span className="text-nowrap">A1 Gateway</span>
                   </Link>
                 </Button>
               </AnimatedGroup>
@@ -142,11 +142,11 @@ export const HeroSection = () => {
                   muted
                   playsInline
                   preload="metadata"
-                  poster={assetPath("/s1-poster.jpg")}
+                  poster={assetPath("/a1-poster.jpg")}
                   width={800}
                   height={480}
                 >
-                  <source src={assetPath("/s1.mp4")} type="video/mp4" />
+                  <source src={assetPath("/a1.mp4")} type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
               </div>
